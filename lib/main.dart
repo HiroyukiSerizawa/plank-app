@@ -1,0 +1,39 @@
+import 'package:flutter/material.dart';
+import 'package:sqflite_common_ffi/sqflite_ffi.dart';
+import 'package:flutter/foundation.dart';
+import 'package:google_mobile_ads/google_mobile_ads.dart';
+import 'screens/timer_screen.dart';
+
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  if (!kIsWeb && (defaultTargetPlatform == TargetPlatform.windows ||
+      defaultTargetPlatform == TargetPlatform.linux)) {
+    sqfliteFfiInit();
+    databaseFactory = databaseFactoryFfi;
+  }
+  if (!kIsWeb) await MobileAds.instance.initialize();
+  runApp(const PlankApp());
+}
+
+class PlankApp extends StatelessWidget {
+  const PlankApp({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'Plank',
+      debugShowCheckedModeBanner: false,
+      theme: ThemeData(
+        brightness: Brightness.dark,
+        scaffoldBackgroundColor: const Color(0xFF030614),
+        colorScheme: const ColorScheme.dark(
+          primary: Color(0xFF00D4FF),
+          secondary: Color(0xFFFFB347),
+          surface: Color(0xFF0A1628),
+        ),
+        useMaterial3: true,
+      ),
+      home: const TimerScreen(),
+    );
+  }
+}
