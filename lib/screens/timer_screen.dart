@@ -212,10 +212,10 @@ class _TimerScreenState extends State<TimerScreen>
                     children: [
                       // ロゴ
                       _NeonText(
-                        'PLANK',
+                        'PLANK NOW',
                         fontSize: 22,
                         fontWeight: FontWeight.w900,
-                        letterSpacing: 6,
+                        letterSpacing: 4,
                       ),
                       // ボタン群
                       Row(
@@ -237,7 +237,26 @@ class _TimerScreenState extends State<TimerScreen>
                   ),
                 ),
 
-                const SizedBox(height: 32),
+                const SizedBox(height: 12),
+
+                // ── スローガン
+                Text(
+                  'DO THE PLANK RIGHT NOW',
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                    fontSize: 11,
+                    fontWeight: FontWeight.w600,
+                    letterSpacing: 3,
+                    color: const Color(0xFFFFB347).withValues(alpha: 0.75),
+                    shadows: [
+                      Shadow(
+                          color: const Color(0xFFFFB347).withValues(alpha: 0.5),
+                          blurRadius: 10),
+                    ],
+                  ),
+                ),
+
+                const SizedBox(height: 20),
 
                 // ── タイマー円
                 _TimerRing(

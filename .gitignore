@@ -33,6 +33,14 @@ migrate_working_dir/
 /build/
 /coverage/
 
+# Signing keys (NEVER COMMIT - upload keystore must stay private)
+*.jks
+*.keystore
+upload-keystore.jks
+
+# Build logs / temp
+build_log.txt
+
 # Symbolication related
 app.*.symbols
 
