@@ -93,14 +93,14 @@ class _TimerScreenState extends State<TimerScreen>
           borderRadius: BorderRadius.circular(16),
           side: const BorderSide(color: Color(0xFF00D4FF), width: 1),
         ),
-        title: const Text('カスタム秒数',
+        title: const Text('Custom Duration',
             style: TextStyle(color: Color(0xFF00D4FF))),
         content: TextField(
           controller: controller,
           keyboardType: TextInputType.number,
           style: const TextStyle(color: Colors.white),
           decoration: const InputDecoration(
-            suffixText: '秒',
+            suffixText: 'sec',
             suffixStyle: TextStyle(color: Color(0xFF00D4FF)),
             enabledBorder: UnderlineInputBorder(
               borderSide: BorderSide(color: Color(0xFF00D4FF)),
@@ -114,7 +114,7 @@ class _TimerScreenState extends State<TimerScreen>
         actions: [
           TextButton(
             onPressed: () => Navigator.pop(context),
-            child: const Text('キャンセル',
+            child: const Text('Cancel',
                 style: TextStyle(color: Colors.white54)),
           ),
           TextButton(
@@ -287,7 +287,7 @@ class _TimerScreenState extends State<TimerScreen>
                       Padding(
                         padding: const EdgeInsets.symmetric(horizontal: 6),
                         child: _NeonChip(
-                          label: 'カスタム',
+                          label: 'Custom',
                           selected: false,
                           onTap: _setCustom,
                         ),
