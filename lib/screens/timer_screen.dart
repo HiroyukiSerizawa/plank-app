@@ -2,6 +2,7 @@ import 'dart:async';
 import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
+import '../l10n/app_localizations.dart';
 import '../models/record.dart';
 import '../services/database_service.dart';
 import '../services/ad_service.dart';
@@ -85,27 +86,28 @@ class _TimerScreenState extends State<TimerScreen>
 
   void _setCustom() async {
     final controller = TextEditingController();
+    final l10n = AppLocalizations.of(context);
     final result = await showDialog<int>(
       context: context,
-      builder: (_) => AlertDialog(
+      builder: (dialogContext) => AlertDialog(
         backgroundColor: const Color(0xFF0A1628),
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(16),
           side: const BorderSide(color: Color(0xFF00D4FF), width: 1),
         ),
-        title: const Text('Custom Duration',
-            style: TextStyle(color: Color(0xFF00D4FF))),
+        title: Text(l10n.customDurationTitle,
+            style: const TextStyle(color: Color(0xFF00D4FF))),
         content: TextField(
           controller: controller,
           keyboardType: TextInputType.number,
           style: const TextStyle(color: Colors.white),
-          decoration: const InputDecoration(
-            suffixText: 'sec',
-            suffixStyle: TextStyle(color: Color(0xFF00D4FF)),
-            enabledBorder: UnderlineInputBorder(
+          decoration: InputDecoration(
+            suffixText: l10n.secInputSuffix,
+            suffixStyle: const TextStyle(color: Color(0xFF00D4FF)),
+            enabledBorder: const UnderlineInputBorder(
               borderSide: BorderSide(color: Color(0xFF00D4FF)),
             ),
-            focusedBorder: UnderlineInputBorder(
+            focusedBorder: const UnderlineInputBorder(
               borderSide: BorderSide(color: Color(0xFFFFB347), width: 2),
             ),
           ),
@@ -113,17 +115,17 @@ class _TimerScreenState extends State<TimerScreen>
         ),
         actions: [
           TextButton(
-            onPressed: () => Navigator.pop(context),
-            child: const Text('Cancel',
-                style: TextStyle(color: Colors.white54)),
+            onPressed: () => Navigator.pop(dialogContext),
+            child: Text(l10n.cancel,
+                style: const TextStyle(color: Colors.white54)),
           ),
           TextButton(
             onPressed: () {
               final v = int.tryParse(controller.text);
-              if (v != null && v > 0) Navigator.pop(context, v);
+              if (v != null && v > 0) Navigator.pop(dialogContext, v);
             },
-            child: const Text('OK',
-                style: TextStyle(color: Color(0xFFFFB347))),
+            child: Text(l10n.ok,
+                style: const TextStyle(color: Color(0xFFFFB347))),
           ),
         ],
       ),
@@ -149,6 +151,7 @@ class _TimerScreenState extends State<TimerScreen>
 
   @override
   Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context);
     return Scaffold(
       backgroundColor: const Color(0xFF030614),
       bottomNavigationBar: _bannerReady && _banner != null
@@ -241,7 +244,7 @@ class _TimerScreenState extends State<TimerScreen>
 
                 // ── スローガン
                 Text(
-                  'DO THE PLANK RIGHT NOW',
+                  l10n.slogan,
                   textAlign: TextAlign.center,
                   style: TextStyle(
                     fontSize: 11,
@@ -265,6 +268,8 @@ class _TimerScreenState extends State<TimerScreen>
                   done: _done,
                   pulseAnim: _pulseAnim,
                   label: _timeLabel,
+                  remainingLabel: l10n.secRemaining,
+                  secondsLabel: l10n.secondsLabel,
                 ),
 
                 const SizedBox(height: 36),
@@ -287,7 +292,7 @@ class _TimerScreenState extends State<TimerScreen>
                       Padding(
                         padding: const EdgeInsets.symmetric(horizontal: 6),
                         child: _NeonChip(
-                          label: 'Custom',
+                          label: l10n.customChip,
                           selected: false,
                           onTap: _setCustom,
                         ),
@@ -303,13 +308,13 @@ class _TimerScreenState extends State<TimerScreen>
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       _MainButton(
-                        label: 'ABORT',
+                        label: l10n.abort,
                         color: const Color(0xFFFF4466),
                         onTap: _abort,
                       ),
                       const SizedBox(width: 16),
                       _MainButton(
-                        label: 'GIVE UP',
+                        label: l10n.giveUp,
                         color: const Color(0xFFFFB347),
                         onTap: _giveUp,
                       ),
@@ -317,7 +322,7 @@ class _TimerScreenState extends State<TimerScreen>
                   )
                 else
                   _MainButton(
-                    label: _done ? 'RETRY' : 'START',
+                    label: _done ? l10n.retry : l10n.start,
                     color: const Color(0xFF00D4FF),
                     onTap: _done ? () => setState(() => _done = false) : _start,
                   ),
@@ -406,6 +411,8 @@ class _TimerRing extends StatelessWidget {
   final bool done;
   final Animation<double> pulseAnim;
   final String label;
+  final String remainingLabel;
+  final String secondsLabel;
 
   const _TimerRing({
     required this.progress,
@@ -413,6 +420,8 @@ class _TimerRing extends StatelessWidget {
     required this.done,
     required this.pulseAnim,
     required this.label,
+    required this.remainingLabel,
+    required this.secondsLabel,
   });
 
   @override
@@ -473,7 +482,7 @@ class _TimerRing extends StatelessWidget {
                   ),
                   if (!done)
                     Text(
-                      running ? 'SEC REMAINING' : 'SECONDS',
+                      running ? remainingLabel : secondsLabel,
                       style: TextStyle(
                         fontSize: 10,
                         letterSpacing: 3,

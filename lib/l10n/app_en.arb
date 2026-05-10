@@ -1,0 +1,101 @@
+{
+  "@@locale": "en",
+  "slogan": "DO THE PLANK RIGHT NOW",
+  "@slogan": {
+    "description": "App tagline shown above the timer ring"
+  },
+  "secRemaining": "SEC REMAINING",
+  "@secRemaining": {
+    "description": "Label under the timer countdown while running"
+  },
+  "secondsLabel": "SECONDS",
+  "@secondsLabel": {
+    "description": "Label under the timer ring when idle"
+  },
+  "customChip": "Custom",
+  "@customChip": {
+    "description": "Preset chip that opens the custom-duration dialog"
+  },
+  "abort": "ABORT",
+  "@abort": {
+    "description": "Main button to stop the timer without recording"
+  },
+  "giveUp": "GIVE UP",
+  "@giveUp": {
+    "description": "Main button to stop early but still record the elapsed seconds"
+  },
+  "retry": "RETRY",
+  "@retry": {
+    "description": "Main button to start a new attempt after finishing"
+  },
+  "start": "START",
+  "@start": {
+    "description": "Main button to begin the timer"
+  },
+  "customDurationTitle": "Custom Duration",
+  "@customDurationTitle": {
+    "description": "Title of the custom duration dialog"
+  },
+  "secInputSuffix": "sec",
+  "@secInputSuffix": {
+    "description": "Suffix shown next to the seconds input field"
+  },
+  "cancel": "Cancel",
+  "@cancel": {
+    "description": "Generic cancel action"
+  },
+  "ok": "OK",
+  "@ok": {
+    "description": "Generic confirmation action"
+  },
+  "historyTitle": "HISTORY",
+  "@historyTitle": {
+    "description": "AppBar title of the history screen"
+  },
+  "noRecordsYet": "NO RECORDS YET",
+  "@noRecordsYet": {
+    "description": "Empty state shown when there are no records"
+  },
+  "secUnit": "SEC",
+  "@secUnit": {
+    "description": "Compact 'seconds' suffix shown next to record durations"
+  },
+  "statsTitle": "STATS",
+  "@statsTitle": {
+    "description": "AppBar title of the stats screen"
+  },
+  "noDataYet": "NO DATA YET",
+  "@noDataYet": {
+    "description": "Empty state shown when stats have no data"
+  },
+  "best": "BEST",
+  "@best": {
+    "description": "Stat card label for personal best seconds"
+  },
+  "avg": "AVG",
+  "@avg": {
+    "description": "Stat card label for average seconds"
+  },
+  "dailyBestSection": "DAILY BEST  /  14 DAYS",
+  "@dailyBestSection": {
+    "description": "Section title above the daily best line chart"
+  },
+  "weeklyTotalSection": "WEEKLY TOTAL  /  8 WEEKS",
+  "@weeklyTotalSection": {
+    "description": "Section title above the weekly total bar chart"
+  },
+  "allRecordsSection": "ALL RECORDS  /  {count} SESSIONS",
+  "@allRecordsSection": {
+    "description": "Section title above the all-records chart with session count",
+    "placeholders": {
+      "count": {
+        "type": "int",
+        "example": "42"
+      }
+    }
+  },
+  "weekNow": "NOW",
+  "@weekNow": {
+    "description": "Bar chart x-axis label for the current week"
+  }
+}

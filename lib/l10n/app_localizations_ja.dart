@@ -1,0 +1,81 @@
+// ignore: unused_import
+import 'package:intl/intl.dart' as intl;
+import 'app_localizations.dart';
+
+// ignore_for_file: type=lint
+
+/// The translations for Japanese (`ja`).
+class AppLocalizationsJa extends AppLocalizations {
+  AppLocalizationsJa([String locale = 'ja']) : super(locale);
+
+  @override
+  String get slogan => '今すぐプランクを';
+
+  @override
+  String get secRemaining => '残り秒';
+
+  @override
+  String get secondsLabel => '秒';
+
+  @override
+  String get customChip => 'カスタム';
+
+  @override
+  String get abort => '中断';
+
+  @override
+  String get giveUp => 'ギブアップ';
+
+  @override
+  String get retry => 'もう一度';
+
+  @override
+  String get start => 'スタート';
+
+  @override
+  String get customDurationTitle => 'カスタム秒数';
+
+  @override
+  String get secInputSuffix => '秒';
+
+  @override
+  String get cancel => 'キャンセル';
+
+  @override
+  String get ok => 'OK';
+
+  @override
+  String get historyTitle => '履歴';
+
+  @override
+  String get noRecordsYet => 'まだ記録がありません';
+
+  @override
+  String get secUnit => '秒';
+
+  @override
+  String get statsTitle => '統計';
+
+  @override
+  String get noDataYet => 'まだデータがありません';
+
+  @override
+  String get best => 'ベスト';
+
+  @override
+  String get avg => '平均';
+
+  @override
+  String get dailyBestSection => '日別ベスト  /  直近14日';
+
+  @override
+  String get weeklyTotalSection => '週別合計  /  直近8週';
+
+  @override
+  String allRecordsSection(int count) {
+    return '全記録  /  $countセッション';
+  }
+
+  @override
+  String get weekNow => '今週';
+}

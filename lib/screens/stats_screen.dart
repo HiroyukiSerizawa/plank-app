@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:fl_chart/fl_chart.dart';
+import '../l10n/app_localizations.dart';
 import '../models/record.dart';
 import '../services/database_service.dart';
 
@@ -25,6 +26,7 @@ class _StatsScreenState extends State<StatsScreen> {
 
   @override
   Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context);
     return Scaffold(
       backgroundColor: _bg,
       appBar: AppBar(
@@ -41,7 +43,7 @@ class _StatsScreenState extends State<StatsScreen> {
             child: const Icon(Icons.arrow_back_ios_new, color: _cyan, size: 16),
           ),
         ),
-        title: const _NeonTitle('STATS'),
+        title: _NeonTitle(l10n.statsTitle),
         centerTitle: true,
       ),
       body: FutureBuilder<Map<String, dynamic>>(
@@ -62,7 +64,7 @@ class _StatsScreenState extends State<StatsScreen> {
           if (best == 0) {
             return Center(
               child: Text(
-                'NO DATA YET',
+                l10n.noDataYet,
                 style: TextStyle(
                   color: _cyan.withValues(alpha: 0.5),
                   fontSize: 13,
@@ -78,11 +80,11 @@ class _StatsScreenState extends State<StatsScreen> {
               // ── ベスト・平均カード
               Row(
                 children: [
-                  Expanded(child: _StatCard(label: 'BEST', value: '${best}s', color: _gold)),
+                  Expanded(child: _StatCard(label: l10n.best, value: '${best}s', color: _gold)),
                   const SizedBox(width: 12),
                   Expanded(
                     child: _StatCard(
-                      label: 'AVG',
+                      label: l10n.avg,
                       value: '${avg.toStringAsFixed(1)}s',
                       color: _cyan,
                     ),
@@ -92,19 +94,19 @@ class _StatsScreenState extends State<StatsScreen> {
               const SizedBox(height: 24),
 
               // ── 折れ線グラフ（日別推移）
-              _SectionTitle('DAILY BEST  /  14 DAYS'),
+              _SectionTitle(l10n.dailyBestSection),
               const SizedBox(height: 12),
               _LineChartCard(daily: daily),
               const SizedBox(height: 24),
 
               // ── 棒グラフ（週別合計）
-              _SectionTitle('WEEKLY TOTAL  /  8 WEEKS'),
+              _SectionTitle(l10n.weeklyTotalSection),
               const SizedBox(height: 12),
-              _BarChartCard(weekly: weekly),
+              _BarChartCard(weekly: weekly, nowLabel: l10n.weekNow),
               const SizedBox(height: 24),
 
               // ── 全記録グラフ
-              _SectionTitle('ALL RECORDS  /  ${all.length} SESSIONS'),
+              _SectionTitle(l10n.allRecordsSection(all.length)),
               const SizedBox(height: 12),
               _AllRecordsChart(records: all),
             ],
@@ -295,10 +297,11 @@ class _LineChartCard extends StatelessWidget {
 // ─────────────────────────────────────────
 class _BarChartCard extends StatelessWidget {
   final Map<int, int> weekly;
+  final String nowLabel;
   static const _gold = Color(0xFFFFB347);
   static const _cyan = Color(0xFF00D4FF);
 
-  const _BarChartCard({required this.weekly});
+  const _BarChartCard({required this.weekly, required this.nowLabel});
 
   @override
   Widget build(BuildContext context) {
@@ -366,7 +369,7 @@ class _BarChartCard extends StatelessWidget {
                 getTitlesWidget: (v, _) {
                   final weeksAgo = 7 - v.toInt();
                   return Text(
-                    weeksAgo == 0 ? 'NOW' : '-${weeksAgo}w',
+                    weeksAgo == 0 ? nowLabel : '-${weeksAgo}w',
                     style: TextStyle(
                       fontSize: 9,
                       color: weeksAgo == 0

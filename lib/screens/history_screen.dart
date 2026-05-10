@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../l10n/app_localizations.dart';
 import '../models/record.dart';
 import '../services/database_service.dart';
 
@@ -24,6 +25,7 @@ class _HistoryScreenState extends State<HistoryScreen> {
 
   @override
   Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context);
     return Scaffold(
       backgroundColor: const Color(0xFF030614),
       appBar: AppBar(
@@ -42,7 +44,7 @@ class _HistoryScreenState extends State<HistoryScreen> {
                 color: Color(0xFF00D4FF), size: 16),
           ),
         ),
-        title: const _NeonTitle('HISTORY'),
+        title: _NeonTitle(l10n.historyTitle),
         centerTitle: true,
       ),
       body: Stack(
@@ -88,7 +90,7 @@ class _HistoryScreenState extends State<HistoryScreen> {
                           color: const Color(0xFF00D4FF).withValues(alpha: 0.3)),
                       const SizedBox(height: 16),
                       Text(
-                        'NO RECORDS YET',
+                        l10n.noRecordsYet,
                         style: TextStyle(
                           color: const Color(0xFF00D4FF).withValues(alpha: 0.5),
                           fontSize: 13,
@@ -112,6 +114,7 @@ class _HistoryScreenState extends State<HistoryScreen> {
                     dateLabel: _fmt(r.date),
                     highlight: isTop,
                     rank: i + 1,
+                    secLabel: l10n.secUnit,
                     onDelete: () async {
                       await DatabaseService.delete(r.id!);
                       setState(() {
@@ -156,6 +159,7 @@ class _RecordTile extends StatelessWidget {
   final String dateLabel;
   final bool highlight;
   final int rank;
+  final String secLabel;
   final VoidCallback onDelete;
 
   const _RecordTile({
@@ -163,6 +167,7 @@ class _RecordTile extends StatelessWidget {
     required this.dateLabel,
     required this.highlight,
     required this.rank,
+    required this.secLabel,
     required this.onDelete,
   });
 
@@ -221,7 +226,7 @@ class _RecordTile extends StatelessWidget {
           ),
           const SizedBox(width: 6),
           Text(
-            'SEC',
+            secLabel,
             style: TextStyle(
               fontSize: 10,
               letterSpacing: 2,
