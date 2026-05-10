@@ -9,7 +9,7 @@ class AppLocalizationsKo extends AppLocalizations {
   AppLocalizationsKo([String locale = 'ko']) : super(locale);
 
   @override
-  String get slogan => '지금 바로 플랭크';
+  String get slogan => '지금 플랭크하자';
 
   @override
   String get secRemaining => '남은 초';
@@ -21,7 +21,7 @@ class AppLocalizationsKo extends AppLocalizations {
   String get customChip => '사용자 지정';
 
   @override
-  String get abort => '중단';
+  String get abort => '취소';
 
   @override
   String get giveUp => '포기';

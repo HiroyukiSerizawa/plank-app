@@ -22,7 +22,7 @@ Timer plank cyberpunk. Inizia, tieni, batti il tuo record. Gratis, offline.
 ```
 PLANK NOW — Allenamento del core brutalmente semplice, costruito splendidamente.
 
-FAI IL PLANK ADESSO.
+FACCIAMO IL PLANK ADESSO.
 Niente menu. Niente account. Niente fronzoli.
 Premi START. Tieni. Batti il tuo record.
 
@@ -37,7 +37,7 @@ La maggior parte delle app fitness ti annega in registrazioni, programmi e paywa
 ■ Grafico a barre del volume totale settimanale delle ultime 8 settimane
 ■ Grafico di progressione di tutti i tempi
 ■ Lista dello storico completa con eliminazione one-tap
-■ ABORT (non registra) e GIVE UP (registra parziale) — fermati onestamente
+■ CANCEL (non registra) e GIVE UP (registra parziale) — fermati onestamente
 ■ 100% offline — niente internet, niente login, niente account
 ■ Leggera, veloce, senza bloat
 

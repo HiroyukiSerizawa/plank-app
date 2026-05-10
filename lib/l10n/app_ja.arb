@@ -1,10 +1,10 @@
 {
   "@@locale": "ja",
-  "slogan": "今すぐプランクを",
+  "slogan": "プランクやろうぜ",
   "secRemaining": "残り秒",
   "secondsLabel": "秒",
   "customChip": "カスタム",
-  "abort": "中断",
+  "abort": "キャンセル",
   "giveUp": "ギブアップ",
   "retry": "もう一度",
   "start": "スタート",

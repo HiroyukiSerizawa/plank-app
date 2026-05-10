@@ -21,7 +21,7 @@ Cyberpunk plank zamanlayıcı. Başla, dayan, rekorunu kır. Ücretsiz, çevrimd
 ```
 PLANK NOW — Vahşice basit çekirdek antrenmanı, güzelce inşa edilmiş.
 
-ŞİMDİ PLANK YAP.
+HAYDİ ŞİMDİ PLANK YAPALIM.
 Menü yok. Hesap yok. Lafazanlık yok.
 START'a bas. Dayan. Rekorunu kır.
 
@@ -36,7 +36,7 @@ START'a bas. Dayan. Rekorunu kır.
 ■ 8 haftalık haftalık toplam hacim çubuk grafiği
 ■ Tüm zamanların ilerleme grafiği
 ■ Tek dokunuşla silmeli tam geçmiş listesi
-■ ABORT (kaydetme) ve GIVE UP (kısmi kaydet) — dürüstçe dur
+■ CANCEL (kaydetme) ve GIVE UP (kısmi kaydet) — dürüstçe dur
 ■ %100 çevrimdışı — internet, oturum açma, hesap yok
 ■ Hafif, hızlı, şişme yok
 

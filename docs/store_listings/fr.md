@@ -17,7 +17,7 @@ Timer cyberpunk de gainage. Lance, tiens, écrase ton record. Gratuit, hors lign
 ```
 PLANK NOW — Entraînement du core brutalement simple, magnifiquement construit.
 
-FAIS LA PLANCHE MAINTENANT.
+FAISONS LA PLANCHE MAINTENANT.
 Pas de menus. Pas de comptes. Pas de blabla.
 Appuie sur START. Tiens. Écrase ton record.
 
@@ -32,7 +32,7 @@ La plupart des apps de fitness te noient sous les inscriptions, les programmes e
 ■ Graphique en barres du volume total hebdomadaire des 8 dernières semaines
 ■ Graphique de progression historique
 ■ Liste d'historique complète avec suppression en un appui
-■ ABORT (n'enregistre pas) et GIVE UP (enregistrement partiel) — arrête-toi honnêtement
+■ ANNULER (n'enregistre pas) et GIVE UP (enregistrement partiel) — arrête-toi honnêtement
 ■ 100 % hors ligne — pas d'internet, pas de connexion, pas de compte
 ■ Léger, rapide, sans bloat
 

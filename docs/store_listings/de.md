@@ -17,7 +17,7 @@ Cyberpunk-Plank-Timer. Start, halten, Bestzeit knacken. Kostenlos, offline.
 ```
 PLANK NOW — Brutal einfaches Core-Training, schön gebaut.
 
-MACH JETZT DEN PLANK.
+PLANKEN WIR JETZT.
 Keine Menüs. Keine Konten. Kein Geschwätz.
 START drücken. Halten. Bestzeit knacken.
 

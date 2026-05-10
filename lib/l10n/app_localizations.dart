@@ -118,10 +118,10 @@ abstract class AppLocalizations {
     Locale('zh', 'TW'),
   ];
 
-  /// App tagline shown above the timer ring
+  /// App tagline shown above the timer ring (inclusive 'let's' form)
   ///
   /// In en, this message translates to:
-  /// **'DO THE PLANK RIGHT NOW'**
+  /// **'LET\'S PLANK NOW'**
   String get slogan;
 
   /// Label under the timer countdown while running
@@ -142,10 +142,10 @@ abstract class AppLocalizations {
   /// **'Custom'**
   String get customChip;
 
-  /// Main button to stop the timer without recording
+  /// Main button to stop the timer without recording (cancel-style label)
   ///
   /// In en, this message translates to:
-  /// **'ABORT'**
+  /// **'CANCEL'**
   String get abort;
 
   /// Main button to stop early but still record the elapsed seconds

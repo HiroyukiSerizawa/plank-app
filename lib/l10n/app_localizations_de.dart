@@ -9,7 +9,7 @@ class AppLocalizationsDe extends AppLocalizations {
   AppLocalizationsDe([String locale = 'de']) : super(locale);
 
   @override
-  String get slogan => 'MACH JETZT DEN PLANK';
+  String get slogan => 'PLANKEN WIR JETZT';
 
   @override
   String get secRemaining => 'SEK ÜBRIG';

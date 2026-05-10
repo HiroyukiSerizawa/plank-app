@@ -1,10 +1,10 @@
 {
   "@@locale": "zh",
-  "slogan": "立即開始棒式",
+  "slogan": "一起來做棒式",
   "secRemaining": "剩餘秒數",
   "secondsLabel": "秒",
   "customChip": "自訂",
-  "abort": "中斷",
+  "abort": "取消",
   "giveUp": "放棄",
   "retry": "再來一次",
   "start": "開始",

@@ -9,7 +9,7 @@ class AppLocalizationsEs extends AppLocalizations {
   AppLocalizationsEs([String locale = 'es']) : super(locale);
 
   @override
-  String get slogan => 'PLANCHA AHORA MISMO';
+  String get slogan => 'HAGAMOS LA PLANCHA AHORA';
 
   @override
   String get secRemaining => 'SEG RESTANTES';

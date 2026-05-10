@@ -17,7 +17,7 @@ Cyberpunk plank timer. Start, hold, crush your personal best. Free, offline.
 ```
 PLANK NOW — Brutally simple core training, beautifully built.
 
-DO THE PLANK RIGHT NOW.
+LET'S PLANK NOW.
 No menus. No accounts. No fluff.
 Hit START. Hold. Beat your best.
 
@@ -32,7 +32,7 @@ Most fitness apps drown you in onboarding, programs, and paywalls. Plank Now doe
 ■ 8-week total volume bar chart
 ■ All-time progression chart
 ■ Complete history list with one-tap delete
-■ ABORT (don't record) and GIVE UP (record partial) — stop honestly
+■ CANCEL (don't record) and GIVE UP (record partial) — stop honestly
 ■ 100% offline — no internet required, no login, no account
 ■ Lightweight, fast, no bloat
 

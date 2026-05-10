@@ -9,7 +9,7 @@ class AppLocalizationsPt extends AppLocalizations {
   AppLocalizationsPt([String locale = 'pt']) : super(locale);
 
   @override
-  String get slogan => 'FAÇA A PRANCHA AGORA';
+  String get slogan => 'VAMOS FAZER A PRANCHA AGORA';
 
   @override
   String get secRemaining => 'SEG RESTANTES';
@@ -85,7 +85,7 @@ class AppLocalizationsPtBr extends AppLocalizationsPt {
   AppLocalizationsPtBr() : super('pt_BR');
 
   @override
-  String get slogan => 'FAÇA A PRANCHA AGORA';
+  String get slogan => 'VAMOS FAZER A PRANCHA AGORA';
 
   @override
   String get secRemaining => 'SEG RESTANTES';

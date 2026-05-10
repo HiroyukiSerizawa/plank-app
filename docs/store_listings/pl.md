@@ -22,7 +22,7 @@ Cyberpunkowy timer deski. Start, trzymaj, pobij swój rekord. Darmowy, offline.
 ```
 PLANK NOW — Brutalnie prosty trening core'a, pięknie zbudowany.
 
-ZRÓB DESKĘ TERAZ.
+ZRÓBMY DESKĘ TERAZ.
 Bez menu. Bez kont. Bez ściemy.
 Naciśnij START. Trzymaj. Pobij swój rekord.
 
@@ -37,7 +37,7 @@ Większość aplikacji fitness topi cię w rejestracjach, programach i paywallac
 ■ Wykres słupkowy tygodniowej objętości z ostatnich 8 tygodni
 ■ Wykres progresji od początku
 ■ Pełna lista historii z usuwaniem jednym dotknięciem
-■ ABORT (bez zapisu) i GIVE UP (zapis częściowy) — zatrzymuj się uczciwie
+■ CANCEL (bez zapisu) i GIVE UP (zapis częściowy) — zatrzymuj się uczciwie
 ■ 100% offline — bez internetu, bez logowania, bez konta
 ■ Lekki, szybki, bez bloatu
 

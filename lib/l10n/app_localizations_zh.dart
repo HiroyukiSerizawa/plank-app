@@ -9,7 +9,7 @@ class AppLocalizationsZh extends AppLocalizations {
   AppLocalizationsZh([String locale = 'zh']) : super(locale);
 
   @override
-  String get slogan => '立即開始棒式';
+  String get slogan => '一起來做棒式';
 
   @override
   String get secRemaining => '剩餘秒數';
@@ -21,7 +21,7 @@ class AppLocalizationsZh extends AppLocalizations {
   String get customChip => '自訂';
 
   @override
-  String get abort => '中斷';
+  String get abort => '取消';
 
   @override
   String get giveUp => '放棄';
@@ -85,7 +85,7 @@ class AppLocalizationsZhTw extends AppLocalizationsZh {
   AppLocalizationsZhTw() : super('zh_TW');
 
   @override
-  String get slogan => '立即開始棒式';
+  String get slogan => '一起來做棒式';
 
   @override
   String get secRemaining => '剩餘秒數';
@@ -97,7 +97,7 @@ class AppLocalizationsZhTw extends AppLocalizationsZh {
   String get customChip => '自訂';
 
   @override
-  String get abort => '中斷';
+  String get abort => '取消';
 
   @override
   String get giveUp => '放棄';

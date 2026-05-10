@@ -9,7 +9,7 @@ class AppLocalizationsJa extends AppLocalizations {
   AppLocalizationsJa([String locale = 'ja']) : super(locale);
 
   @override
-  String get slogan => '今すぐプランクを';
+  String get slogan => 'プランクやろうぜ';
 
   @override
   String get secRemaining => '残り秒';
@@ -21,7 +21,7 @@ class AppLocalizationsJa extends AppLocalizations {
   String get customChip => 'カスタム';
 
   @override
-  String get abort => '中断';
+  String get abort => 'キャンセル';
 
   @override
   String get giveUp => 'ギブアップ';

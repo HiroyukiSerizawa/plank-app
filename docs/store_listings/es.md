@@ -21,7 +21,7 @@ Timer ciberpunk de plancha. Inicia, aguanta, supera tu récord. Gratis, offline.
 ```
 PLANK NOW — Entrenamiento de core brutalmente simple, hermosamente construido.
 
-PLANCHA AHORA MISMO.
+HAGAMOS LA PLANCHA AHORA.
 Sin menús. Sin cuentas. Sin paja.
 Pulsa START. Aguanta. Supera tu récord.
 
@@ -36,7 +36,7 @@ La mayoría de las apps de fitness te ahogan en registros, programas y muros de 
 ■ Gráfico de barras del volumen total semanal de las últimas 8 semanas
 ■ Gráfico de progresión histórica
 ■ Lista completa de historial con borrado en un toque
-■ ABORT (no registra) y GIVE UP (registra parcial) — para parar honestamente
+■ CANCELAR (no registra) y GIVE UP (registra parcial) — para parar honestamente
 ■ 100% offline — sin internet, sin login, sin cuenta
 ■ Ligera, rápida, sin bloat
 

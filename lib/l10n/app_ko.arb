@@ -1,10 +1,10 @@
 {
   "@@locale": "ko",
-  "slogan": "지금 바로 플랭크",
+  "slogan": "지금 플랭크하자",
   "secRemaining": "남은 초",
   "secondsLabel": "초",
   "customChip": "사용자 지정",
-  "abort": "중단",
+  "abort": "취소",
   "giveUp": "포기",
   "retry": "다시",
   "start": "시작",

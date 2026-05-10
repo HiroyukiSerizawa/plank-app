@@ -9,7 +9,7 @@ class AppLocalizationsEn extends AppLocalizations {
   AppLocalizationsEn([String locale = 'en']) : super(locale);
 
   @override
-  String get slogan => 'DO THE PLANK RIGHT NOW';
+  String get slogan => 'LET\'S PLANK NOW';
 
   @override
   String get secRemaining => 'SEC REMAINING';
@@ -21,7 +21,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get customChip => 'Custom';
 
   @override
-  String get abort => 'ABORT';
+  String get abort => 'CANCEL';
 
   @override
   String get giveUp => 'GIVE UP';

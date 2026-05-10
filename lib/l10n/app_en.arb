@@ -1,8 +1,8 @@
 {
   "@@locale": "en",
-  "slogan": "DO THE PLANK RIGHT NOW",
+  "slogan": "LET'S PLANK NOW",
   "@slogan": {
-    "description": "App tagline shown above the timer ring"
+    "description": "App tagline shown above the timer ring (inclusive 'let's' form)"
   },
   "secRemaining": "SEC REMAINING",
   "@secRemaining": {
@@ -16,9 +16,9 @@
   "@customChip": {
     "description": "Preset chip that opens the custom-duration dialog"
   },
-  "abort": "ABORT",
+  "abort": "CANCEL",
   "@abort": {
-    "description": "Main button to stop the timer without recording"
+    "description": "Main button to stop the timer without recording (cancel-style label)"
   },
   "giveUp": "GIVE UP",
   "@giveUp": {

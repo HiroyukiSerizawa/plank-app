@@ -9,7 +9,7 @@ class AppLocalizationsVi extends AppLocalizations {
   AppLocalizationsVi([String locale = 'vi']) : super(locale);
 
   @override
-  String get slogan => 'TẬP PLANK NGAY BÂY GIỜ';
+  String get slogan => 'CÙNG TẬP PLANK NGAY';
 
   @override
   String get secRemaining => 'GIÂY CÒN LẠI';

@@ -17,7 +17,7 @@ Timer plank cyberpunk. Mulai, tahan, pecahkan rekor pribadi. Gratis, offline.
 ```
 PLANK NOW — Latihan inti yang brutal sederhana, dibangun dengan indah.
 
-LAKUKAN PLANK SEKARANG.
+AYO PLANK SEKARANG.
 Tanpa menu. Tanpa akun. Tanpa basa-basi.
 Tekan START. Tahan. Pecahkan rekormu.
 
@@ -32,7 +32,7 @@ Kebanyakan aplikasi fitness menenggelamkanmu dalam pendaftaran, program, dan pay
 ■ Grafik batang volume total mingguan 8 minggu terakhir
 ■ Grafik progres sepanjang waktu
 ■ Daftar riwayat lengkap dengan hapus satu sentuhan
-■ ABORT (tidak dicatat) dan GIVE UP (catat parsial) — berhenti dengan jujur
+■ BATAL (tidak dicatat) dan GIVE UP (catat parsial) — berhenti dengan jujur
 ■ 100% offline — tanpa internet, tanpa login, tanpa akun
 ■ Ringan, cepat, tanpa bloat
 

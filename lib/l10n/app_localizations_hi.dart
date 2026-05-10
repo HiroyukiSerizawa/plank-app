@@ -9,7 +9,7 @@ class AppLocalizationsHi extends AppLocalizations {
   AppLocalizationsHi([String locale = 'hi']) : super(locale);
 
   @override
-  String get slogan => 'अभी प्लैंक करें';
+  String get slogan => 'चलो अभी प्लैंक करें';
 
   @override
   String get secRemaining => 'शेष सेकंड';

@@ -17,7 +17,7 @@ Timer ciberpunk de prancha. Inicie, segure, supere seu recorde. Grátis, offline
 ```
 PLANK NOW — Treino de core brutalmente simples, lindamente construído.
 
-FAÇA A PRANCHA AGORA.
+VAMOS FAZER A PRANCHA AGORA.
 Sem menus. Sem contas. Sem enrolação.
 Aperte START. Segure. Supere seu recorde.
 
@@ -32,7 +32,7 @@ A maioria dos apps de fitness te afoga em cadastros, programas e paywalls. O Pla
 ■ Gráfico de barras com o volume total semanal das últimas 8 semanas
 ■ Gráfico de progressão histórica
 ■ Lista completa de histórico com exclusão em um toque
-■ ABORT (não registra) e GIVE UP (registra parcial) — pare honestamente
+■ CANCELAR (não registra) e GIVE UP (registra parcial) — pare honestamente
 ■ 100% offline — sem internet, sem login, sem conta
 ■ Leve, rápido, sem peso morto
 
