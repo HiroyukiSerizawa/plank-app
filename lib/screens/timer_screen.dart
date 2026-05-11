@@ -2,6 +2,7 @@ import 'dart:async';
 import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
+import 'package:wakelock_plus/wakelock_plus.dart';
 import '../l10n/app_localizations.dart';
 import '../models/record.dart';
 import '../services/database_service.dart';
@@ -46,6 +47,9 @@ class _TimerScreenState extends State<TimerScreen>
   }
 
   void _start() {
+    // Keep the screen on while the user is holding a plank — device
+    // screen-off timeout (often 30s) would otherwise blank the timer mid-hold.
+    WakelockPlus.enable();
     setState(() {
       _elapsed = 0;
       _running = true;
@@ -59,11 +63,13 @@ class _TimerScreenState extends State<TimerScreen>
 
   void _abort() {
     _timer?.cancel();
+    WakelockPlus.disable();
     setState(() => _running = false);
   }
 
   Future<void> _giveUp() async {
     _timer?.cancel();
+    await WakelockPlus.disable();
     setState(() {
       _running = false;
       _done = true;
@@ -75,6 +81,7 @@ class _TimerScreenState extends State<TimerScreen>
 
   Future<void> _finish() async {
     _timer?.cancel();
+    await WakelockPlus.disable();
     setState(() {
       _running = false;
       _done = true;
@@ -144,6 +151,9 @@ class _TimerScreenState extends State<TimerScreen>
   @override
   void dispose() {
     _timer?.cancel();
+    // Safety net: release the wakelock if the user navigates away mid-timer
+    // or the app is force-closed. Fire-and-forget — disposal must stay sync.
+    WakelockPlus.disable();
     _pulseController.dispose();
     _banner?.dispose();
     super.dispose();
