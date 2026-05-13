@@ -98,6 +98,11 @@ class AppLocalizationsPt extends AppLocalizations {
   String streakDays(int count) {
     return 'Sequência de $count dias';
   }
+
+  @override
+  String shareRecordMessage(int seconds) {
+    return 'Aguentei a prancha durante $seconds segundos! 💪\n\nPlank Now — temporizador de prancha sem firulas:\nhttps://play.google.com/store/apps/details?id=com.thunderstruck.plank_app';
+  }
 }
 
 /// The translations for Portuguese, as used in Brazil (`pt_BR`).
@@ -193,5 +198,10 @@ class AppLocalizationsPtBr extends AppLocalizationsPt {
   @override
   String streakDays(int count) {
     return 'Sequência de $count dias';
+  }
+
+  @override
+  String shareRecordMessage(int seconds) {
+    return 'Aguentei a prancha por $seconds segundos! 💪\n\nPlank Now — o cronômetro de prancha direto ao ponto:\nhttps://play.google.com/store/apps/details?id=com.thunderstruck.plank_app';
   }
 }

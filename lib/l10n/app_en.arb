@@ -127,5 +127,15 @@
         "example": "5"
       }
     }
+  },
+  "shareRecordMessage": "I held a plank for {seconds} seconds! 💪\n\nPlank Now — the no-frills plank timer:\nhttps://play.google.com/store/apps/details?id=com.thunderstruck.plank_app",
+  "@shareRecordMessage": {
+    "description": "Message used when sharing a plank record to other apps. Includes a {seconds} placeholder and a link to the Play Store listing.",
+    "placeholders": {
+      "seconds": {
+        "type": "int",
+        "example": "60"
+      }
+    }
   }
 }

@@ -98,4 +98,9 @@ class AppLocalizationsKo extends AppLocalizations {
   String streakDays(int count) {
     return '$count일 연속';
   }
+
+  @override
+  String shareRecordMessage(int seconds) {
+    return '플랭크 $seconds초 유지 성공! 💪\n\nPlank Now — 군더더기 없는 플랭크 타이머:\nhttps://play.google.com/store/apps/details?id=com.thunderstruck.plank_app';
+  }
 }

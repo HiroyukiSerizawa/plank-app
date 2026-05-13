@@ -28,5 +28,6 @@
   "countdownVoiceDescription": "Panduan suara untuk awal dan akhir",
   "vibrationLabel": "Getaran",
   "vibrationDescription": "Bergetar pada setiap hitungan",
-  "streakDays": "{count} hari berturut"
+  "streakDays": "{count} hari berturut",
+  "shareRecordMessage": "Berhasil plank selama {seconds} detik! 💪\n\nPlank Now — timer plank tanpa ribet:\nhttps://play.google.com/store/apps/details?id=com.thunderstruck.plank_app"
 }

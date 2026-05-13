@@ -28,5 +28,6 @@
   "countdownVoiceDescription": "Guidage vocal pour le début et la fin",
   "vibrationLabel": "Vibration",
   "vibrationDescription": "Vibre à chaque temps",
-  "streakDays": "Série de {count} jours"
+  "streakDays": "Série de {count} jours",
+  "shareRecordMessage": "J'ai tenu la planche pendant {seconds} secondes ! 💪\n\nPlank Now — le minuteur de planche sans fioritures :\nhttps://play.google.com/store/apps/details?id=com.thunderstruck.plank_app"
 }

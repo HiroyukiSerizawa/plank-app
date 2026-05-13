@@ -28,5 +28,6 @@
   "countdownVoiceDescription": "Guía de voz para el inicio y el final",
   "vibrationLabel": "Vibración",
   "vibrationDescription": "Vibra con cada cuenta",
-  "streakDays": "Racha de {count} días"
+  "streakDays": "Racha de {count} días",
+  "shareRecordMessage": "¡Aguanté la plancha {seconds} segundos! 💪\n\nPlank Now — el temporizador de plancha sin adornos:\nhttps://play.google.com/store/apps/details?id=com.thunderstruck.plank_app"
 }

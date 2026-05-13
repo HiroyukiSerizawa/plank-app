@@ -98,4 +98,9 @@ class AppLocalizationsDe extends AppLocalizations {
   String streakDays(int count) {
     return '$count-Tage-Serie';
   }
+
+  @override
+  String shareRecordMessage(int seconds) {
+    return 'Habe die Plank $seconds Sekunden gehalten! 💪\n\nPlank Now — der schnörkellose Plank-Timer:\nhttps://play.google.com/store/apps/details?id=com.thunderstruck.plank_app';
+  }
 }

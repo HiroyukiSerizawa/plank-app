@@ -28,5 +28,6 @@
   "countdownVoiceDescription": "プランクの開始と終了を音声でガイド",
   "vibrationLabel": "バイブレーション",
   "vibrationDescription": "カウントダウンに合わせて振動",
-  "streakDays": "{count}日連続"
+  "streakDays": "{count}日連続",
+  "shareRecordMessage": "プランクを {seconds}秒キープできた！💪\n\nPlank Now — シンプル一択のプランクタイマー：\nhttps://play.google.com/store/apps/details?id=com.thunderstruck.plank_app"
 }

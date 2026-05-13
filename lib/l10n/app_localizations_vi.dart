@@ -99,4 +99,9 @@ class AppLocalizationsVi extends AppLocalizations {
   String streakDays(int count) {
     return 'Chuỗi $count ngày';
   }
+
+  @override
+  String shareRecordMessage(int seconds) {
+    return 'Tôi đã giữ plank $seconds giây! 💪\n\nPlank Now — đồng hồ plank đơn giản:\nhttps://play.google.com/store/apps/details?id=com.thunderstruck.plank_app';
+  }
 }

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:share_plus/share_plus.dart';
 import '../l10n/app_localizations.dart';
 import '../models/record.dart';
 import '../services/database_service.dart';
@@ -115,6 +116,9 @@ class _HistoryScreenState extends State<HistoryScreen> {
                     highlight: isTop,
                     rank: i + 1,
                     secLabel: l10n.secUnit,
+                    onShare: () {
+                      Share.share(l10n.shareRecordMessage(r.seconds));
+                    },
                     onDelete: () async {
                       await DatabaseService.delete(r.id!);
                       setState(() {
@@ -160,6 +164,7 @@ class _RecordTile extends StatelessWidget {
   final bool highlight;
   final int rank;
   final String secLabel;
+  final VoidCallback onShare;
   final VoidCallback onDelete;
 
   const _RecordTile({
@@ -168,6 +173,7 @@ class _RecordTile extends StatelessWidget {
     required this.highlight,
     required this.rank,
     required this.secLabel,
+    required this.onShare,
     required this.onDelete,
   });
 
@@ -235,6 +241,21 @@ class _RecordTile extends StatelessWidget {
             ),
           ),
           const SizedBox(width: 12),
+          GestureDetector(
+            onTap: onShare,
+            child: Container(
+              padding: const EdgeInsets.all(6),
+              decoration: BoxDecoration(
+                border: Border.all(
+                    color: const Color(0xFF00D4FF).withValues(alpha: 0.4),
+                    width: 1),
+                borderRadius: BorderRadius.circular(4),
+              ),
+              child: const Icon(Icons.share_outlined,
+                  size: 16, color: Color(0xFF00D4FF)),
+            ),
+          ),
+          const SizedBox(width: 8),
           GestureDetector(
             onTap: onDelete,
             child: Container(

@@ -28,5 +28,6 @@
   "countdownVoiceDescription": "Sprachführung für Start und Ende",
   "vibrationLabel": "Vibration",
   "vibrationDescription": "Pulsiert im Takt des Countdowns",
-  "streakDays": "{count}-Tage-Serie"
+  "streakDays": "{count}-Tage-Serie",
+  "shareRecordMessage": "Habe die Plank {seconds} Sekunden gehalten! 💪\n\nPlank Now — der schnörkellose Plank-Timer:\nhttps://play.google.com/store/apps/details?id=com.thunderstruck.plank_app"
 }

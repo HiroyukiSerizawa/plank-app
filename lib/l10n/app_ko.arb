@@ -28,5 +28,6 @@
   "countdownVoiceDescription": "플랭크의 시작과 끝을 음성으로 안내",
   "vibrationLabel": "진동",
   "vibrationDescription": "카운트다운에 맞춰 진동",
-  "streakDays": "{count}일 연속"
+  "streakDays": "{count}일 연속",
+  "shareRecordMessage": "플랭크 {seconds}초 유지 성공! 💪\n\nPlank Now — 군더더기 없는 플랭크 타이머:\nhttps://play.google.com/store/apps/details?id=com.thunderstruck.plank_app"
 }

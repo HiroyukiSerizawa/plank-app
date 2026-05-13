@@ -28,5 +28,6 @@
   "countdownVoiceDescription": "Guia de voz para o início e o fim",
   "vibrationLabel": "Vibração",
   "vibrationDescription": "Pulsa a cada contagem",
-  "streakDays": "Sequência de {count} dias"
+  "streakDays": "Sequência de {count} dias",
+  "shareRecordMessage": "Aguentei a prancha durante {seconds} segundos! 💪\n\nPlank Now — temporizador de prancha sem firulas:\nhttps://play.google.com/store/apps/details?id=com.thunderstruck.plank_app"
 }

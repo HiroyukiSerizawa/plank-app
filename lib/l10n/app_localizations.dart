@@ -291,6 +291,12 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'{count}-day streak'**
   String streakDays(int count);
+
+  /// Message used when sharing a plank record to other apps. Includes a {seconds} placeholder and a link to the Play Store listing.
+  ///
+  /// In en, this message translates to:
+  /// **'I held a plank for {seconds} seconds! 💪\n\nPlank Now — the no-frills plank timer:\nhttps://play.google.com/store/apps/details?id=com.thunderstruck.plank_app'**
+  String shareRecordMessage(int seconds);
 }
 
 class _AppLocalizationsDelegate

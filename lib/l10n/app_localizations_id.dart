@@ -98,4 +98,9 @@ class AppLocalizationsId extends AppLocalizations {
   String streakDays(int count) {
     return '$count hari berturut';
   }
+
+  @override
+  String shareRecordMessage(int seconds) {
+    return 'Berhasil plank selama $seconds detik! 💪\n\nPlank Now — timer plank tanpa ribet:\nhttps://play.google.com/store/apps/details?id=com.thunderstruck.plank_app';
+  }
 }

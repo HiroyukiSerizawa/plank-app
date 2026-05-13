@@ -98,6 +98,11 @@ class AppLocalizationsZh extends AppLocalizations {
   String streakDays(int count) {
     return '連續 $count 天';
   }
+
+  @override
+  String shareRecordMessage(int seconds) {
+    return '我撐了 $seconds 秒棒式！💪\n\nPlank Now — 極簡棒式計時器：\nhttps://play.google.com/store/apps/details?id=com.thunderstruck.plank_app';
+  }
 }
 
 /// The translations for Chinese, as used in Taiwan (`zh_TW`).
@@ -193,5 +198,10 @@ class AppLocalizationsZhTw extends AppLocalizationsZh {
   @override
   String streakDays(int count) {
     return '連續 $count 天';
+  }
+
+  @override
+  String shareRecordMessage(int seconds) {
+    return '我撐了 $seconds 秒棒式！💪\n\nPlank Now — 極簡棒式計時器：\nhttps://play.google.com/store/apps/details?id=com.thunderstruck.plank_app';
   }
 }

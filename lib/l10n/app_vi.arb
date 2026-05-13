@@ -28,5 +28,6 @@
   "countdownVoiceDescription": "Hướng dẫn bằng giọng cho lúc bắt đầu và kết thúc",
   "vibrationLabel": "Rung",
   "vibrationDescription": "Rung theo mỗi nhịp đếm",
-  "streakDays": "Chuỗi {count} ngày"
+  "streakDays": "Chuỗi {count} ngày",
+  "shareRecordMessage": "Tôi đã giữ plank {seconds} giây! 💪\n\nPlank Now — đồng hồ plank đơn giản:\nhttps://play.google.com/store/apps/details?id=com.thunderstruck.plank_app"
 }

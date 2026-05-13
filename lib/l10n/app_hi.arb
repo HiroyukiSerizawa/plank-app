@@ -28,5 +28,6 @@
   "countdownVoiceDescription": "शुरुआत और अंत के लिए आवाज़ मार्गदर्शन",
   "vibrationLabel": "कंपन",
   "vibrationDescription": "हर काउंटडाउन पर कंपन",
-  "streakDays": "{count} दिन की लय"
+  "streakDays": "{count} दिन की लय",
+  "shareRecordMessage": "मैंने {seconds} सेकंड तक प्लैंक की! 💪\n\nPlank Now — सरल प्लैंक टाइमर:\nhttps://play.google.com/store/apps/details?id=com.thunderstruck.plank_app"
 }
