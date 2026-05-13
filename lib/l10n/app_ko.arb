@@ -22,5 +22,8 @@
   "dailyBestSection": "일별 최고  /  최근 14일",
   "weeklyTotalSection": "주별 합계  /  최근 8주",
   "allRecordsSection": "전체 기록  /  {count}회",
-  "weekNow": "이번주"
+  "weekNow": "이번주",
+  "settingsTitle": "설정",
+  "countdownVoiceLabel": "카운트다운 음성",
+  "countdownVoiceDescription": "플랭크의 시작과 끝을 음성으로 안내"
 }

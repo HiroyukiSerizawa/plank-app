@@ -78,4 +78,13 @@ class AppLocalizationsKo extends AppLocalizations {
 
   @override
   String get weekNow => '이번주';
+
+  @override
+  String get settingsTitle => '설정';
+
+  @override
+  String get countdownVoiceLabel => '카운트다운 음성';
+
+  @override
+  String get countdownVoiceDescription => '플랭크의 시작과 끝을 음성으로 안내';
 }

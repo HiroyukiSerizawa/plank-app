@@ -22,5 +22,8 @@
   "dailyBestSection": "每日最佳  /  近14日",
   "weeklyTotalSection": "每週合計  /  近8週",
   "allRecordsSection": "全部紀錄  /  {count}次",
-  "weekNow": "本週"
+  "weekNow": "本週",
+  "settingsTitle": "設定",
+  "countdownVoiceLabel": "倒數語音",
+  "countdownVoiceDescription": "以語音引導棒式的開始與結束"
 }

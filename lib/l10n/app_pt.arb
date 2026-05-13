@@ -22,5 +22,8 @@
   "dailyBestSection": "MELHOR DIÁRIO  /  14 DIAS",
   "weeklyTotalSection": "TOTAL SEMANAL  /  8 SEMANAS",
   "allRecordsSection": "TODOS OS REGISTROS  /  {count} SESSÕES",
-  "weekNow": "AGORA"
+  "weekNow": "AGORA",
+  "settingsTitle": "DEFINIÇÕES",
+  "countdownVoiceLabel": "Voz da contagem decrescente",
+  "countdownVoiceDescription": "Guia de voz para o início e o fim"
 }

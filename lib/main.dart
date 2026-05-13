@@ -4,6 +4,7 @@ import 'package:flutter/foundation.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
 import 'l10n/app_localizations.dart';
 import 'screens/timer_screen.dart';
+import 'services/sound_service.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -13,6 +14,7 @@ void main() async {
     databaseFactory = databaseFactoryFfi;
   }
   if (!kIsWeb) await MobileAds.instance.initialize();
+  await SoundService.instance.init();
   runApp(const PlankApp());
 }
 

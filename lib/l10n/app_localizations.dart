@@ -255,6 +255,24 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'NOW'**
   String get weekNow;
+
+  /// AppBar title of the settings screen
+  ///
+  /// In en, this message translates to:
+  /// **'SETTINGS'**
+  String get settingsTitle;
+
+  /// Settings toggle label for SFX/voice countdown
+  ///
+  /// In en, this message translates to:
+  /// **'Countdown Voice'**
+  String get countdownVoiceLabel;
+
+  /// Settings toggle description for SFX/voice countdown
+  ///
+  /// In en, this message translates to:
+  /// **'Voice guide for the start and finish'**
+  String get countdownVoiceDescription;
 }
 
 class _AppLocalizationsDelegate

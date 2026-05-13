@@ -78,4 +78,13 @@ class AppLocalizationsJa extends AppLocalizations {
 
   @override
   String get weekNow => '今週';
+
+  @override
+  String get settingsTitle => '設定';
+
+  @override
+  String get countdownVoiceLabel => 'カウントダウン音声';
+
+  @override
+  String get countdownVoiceDescription => 'プランクの開始と終了を音声でガイド';
 }

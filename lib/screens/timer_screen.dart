@@ -7,7 +7,9 @@ import '../l10n/app_localizations.dart';
 import '../models/record.dart';
 import '../services/database_service.dart';
 import '../services/ad_service.dart';
+import '../services/sound_service.dart';
 import 'history_screen.dart';
+import 'settings_screen.dart';
 import 'stats_screen.dart';
 
 class TimerScreen extends StatefulWidget {
@@ -21,10 +23,19 @@ class _TimerScreenState extends State<TimerScreen>
     with SingleTickerProviderStateMixin {
   static const _presets = [30, 60, 90];
 
+  // Pre-roll length in seconds. The spec is fixed at 3-2-1 → GO!.
+  static const _prepSeconds = 3;
+
   int _targetSeconds = 60;
   int _elapsed = 0;
   bool _running = false;
   bool _done = false;
+
+  // Pre-roll state. While prepping, the main timer is not running yet —
+  // `_elapsed` stays 0 and the ring shows the prep countdown.
+  bool _prepping = false;
+  int _prepRemaining = 0;
+
   Timer? _timer;
   late AnimationController _pulseController;
   late Animation<double> _pulseAnim;
@@ -47,28 +58,84 @@ class _TimerScreenState extends State<TimerScreen>
   }
 
   void _start() {
-    // Keep the screen on while the user is holding a plank — device
-    // screen-off timeout (often 30s) would otherwise blank the timer mid-hold.
+    // Reset any in-flight timer/audio before entering pre-roll. Guards against
+    // rapid Start/Abort re-taps (test #13).
+    _timer?.cancel();
+    SoundService.instance.stopAll();
+
+    // Keep the screen on across pre-roll + plank — device screen-off timeout
+    // (often 30s) would otherwise blank the timer mid-hold.
     WakelockPlus.enable();
+
+    // When the user has disabled the countdown voice, skip the pre-roll
+    // entirely and preserve the v1.0.3 tap-to-go UX. A silent 3-second prep
+    // would otherwise look broken to anyone who turned the sound off.
+    if (!SoundService.instance.enabled) {
+      setState(() {
+        _elapsed = 0;
+        _done = false;
+        _prepping = false;
+      });
+      _startRunning();
+      return;
+    }
+
     setState(() {
       _elapsed = 0;
-      _running = true;
+      _running = false;
       _done = false;
+      _prepping = true;
+      _prepRemaining = _prepSeconds;
+    });
+    // Fire the first SFX on entry; the periodic timer below handles 2 and 1.
+    SoundService.instance.play('$_prepSeconds.mp3');
+    _timer = Timer.periodic(const Duration(seconds: 1), (t) {
+      final next = _prepRemaining - 1;
+      if (next > 0) {
+        setState(() => _prepRemaining = next);
+        SoundService.instance.play('$next.mp3');
+      } else {
+        t.cancel();
+        SoundService.instance.play('go.mp3');
+        _startRunning();
+      }
+    });
+  }
+
+  void _startRunning() {
+    setState(() {
+      _prepping = false;
+      _running = true;
+      _elapsed = 0;
     });
     _timer = Timer.periodic(const Duration(seconds: 1), (_) {
-      setState(() => _elapsed++);
-      if (_elapsed >= _targetSeconds) _finish();
+      final next = _elapsed + 1;
+      setState(() => _elapsed = next);
+      // End-of-session countdown: 5 → 1 (only when the target is long enough
+      // to fit it; sub-5s sessions skip the countdown — spec test #18).
+      final remaining = _targetSeconds - next;
+      if (_targetSeconds >= 5 && remaining >= 1 && remaining <= 5) {
+        SoundService.instance.play('$remaining.mp3');
+      }
+      if (next >= _targetSeconds) _finish();
     });
   }
 
   void _abort() {
     _timer?.cancel();
+    SoundService.instance.stopAll();
     WakelockPlus.disable();
-    setState(() => _running = false);
+    setState(() {
+      _running = false;
+      _prepping = false;
+    });
   }
 
   Future<void> _giveUp() async {
+    // Early termination: record the elapsed seconds but stay silent
+    // (no Done! — that cue is reserved for completing the target — test #14).
     _timer?.cancel();
+    SoundService.instance.stopAll();
     await WakelockPlus.disable();
     setState(() {
       _running = false;
@@ -81,6 +148,7 @@ class _TimerScreenState extends State<TimerScreen>
 
   Future<void> _finish() async {
     _timer?.cancel();
+    SoundService.instance.play('done.mp3');
     await WakelockPlus.disable();
     setState(() {
       _running = false;
@@ -145,14 +213,17 @@ class _TimerScreenState extends State<TimerScreen>
 
   String get _timeLabel {
     if (_done) return '✓';
+    if (_prepping) return '$_prepRemaining';
     return _running ? '$_remaining' : '$_targetSeconds';
   }
 
   @override
   void dispose() {
     _timer?.cancel();
-    // Safety net: release the wakelock if the user navigates away mid-timer
-    // or the app is force-closed. Fire-and-forget — disposal must stay sync.
+    // Fire-and-forget — disposal stays sync. Same safety-net pattern as
+    // wakelock release: if the user navigates away mid-timer, we must release
+    // the wakelock and stop any in-flight SFX.
+    SoundService.instance.stopAll();
     WakelockPlus.disable();
     _pulseController.dispose();
     _banner?.dispose();
@@ -162,6 +233,7 @@ class _TimerScreenState extends State<TimerScreen>
   @override
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context);
+    final showPresets = !_running && !_done && !_prepping;
     return Scaffold(
       backgroundColor: const Color(0xFF030614),
       bottomNavigationBar: _bannerReady && _banner != null
@@ -244,6 +316,12 @@ class _TimerScreenState extends State<TimerScreen>
                             onTap: () => Navigator.push(context,
                                 MaterialPageRoute(builder: (_) => const HistoryScreen())),
                           ),
+                          const SizedBox(width: 8),
+                          _NeonIconButton(
+                            icon: Icons.settings,
+                            onTap: () => Navigator.push(context,
+                                MaterialPageRoute(builder: (_) => const SettingsScreen())),
+                          ),
                         ],
                       ),
                     ],
@@ -274,8 +352,9 @@ class _TimerScreenState extends State<TimerScreen>
                 // ── タイマー円
                 _TimerRing(
                   progress: _progress,
-                  running: _running,
+                  running: _running || _prepping,
                   done: _done,
+                  prepping: _prepping,
                   pulseAnim: _pulseAnim,
                   label: _timeLabel,
                   remainingLabel: l10n.secRemaining,
@@ -285,7 +364,7 @@ class _TimerScreenState extends State<TimerScreen>
                 const SizedBox(height: 36),
 
                 // ── プリセットチップ
-                if (!_running && !_done)
+                if (showPresets)
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
@@ -313,7 +392,13 @@ class _TimerScreenState extends State<TimerScreen>
                 const SizedBox(height: 32),
 
                 // ── メインボタン
-                if (_running)
+                if (_prepping)
+                  _MainButton(
+                    label: l10n.abort,
+                    color: const Color(0xFFFF4466),
+                    onTap: _abort,
+                  )
+                else if (_running)
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
@@ -419,6 +504,7 @@ class _TimerRing extends StatelessWidget {
   final double progress;
   final bool running;
   final bool done;
+  final bool prepping;
   final Animation<double> pulseAnim;
   final String label;
   final String remainingLabel;
@@ -428,6 +514,7 @@ class _TimerRing extends StatelessWidget {
     required this.progress,
     required this.running,
     required this.done,
+    required this.prepping,
     required this.pulseAnim,
     required this.label,
     required this.remainingLabel,
@@ -436,7 +523,11 @@ class _TimerRing extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final neon = done ? const Color(0xFFFFB347) : const Color(0xFF00D4FF);
+    final neon = done
+        ? const Color(0xFFFFB347)
+        : prepping
+            ? const Color(0xFFFFB347)
+            : const Color(0xFF00D4FF);
 
     return AnimatedBuilder(
       animation: pulseAnim,
@@ -490,7 +581,7 @@ class _TimerRing extends StatelessWidget {
                       ],
                     ),
                   ),
-                  if (!done)
+                  if (!done && !prepping)
                     Text(
                       running ? remainingLabel : secondsLabel,
                       style: TextStyle(

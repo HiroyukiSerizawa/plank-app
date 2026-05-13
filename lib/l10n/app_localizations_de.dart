@@ -78,4 +78,13 @@ class AppLocalizationsDe extends AppLocalizations {
 
   @override
   String get weekNow => 'JETZT';
+
+  @override
+  String get settingsTitle => 'EINSTELLUNGEN';
+
+  @override
+  String get countdownVoiceLabel => 'Countdown-Stimme';
+
+  @override
+  String get countdownVoiceDescription => 'Sprachführung für Start und Ende';
 }

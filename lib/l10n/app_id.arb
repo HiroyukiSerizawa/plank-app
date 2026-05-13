@@ -22,5 +22,8 @@
   "dailyBestSection": "TERBAIK HARIAN  /  14 HARI",
   "weeklyTotalSection": "TOTAL MINGGUAN  /  8 MINGGU",
   "allRecordsSection": "SEMUA CATATAN  /  {count} SESI",
-  "weekNow": "KINI"
+  "weekNow": "KINI",
+  "settingsTitle": "PENGATURAN",
+  "countdownVoiceLabel": "Suara Hitung Mundur",
+  "countdownVoiceDescription": "Panduan suara untuk awal dan akhir"
 }

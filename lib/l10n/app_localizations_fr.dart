@@ -78,4 +78,14 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get weekNow => 'MAINT.';
+
+  @override
+  String get settingsTitle => 'PARAMÈTRES';
+
+  @override
+  String get countdownVoiceLabel => 'Voix du compte à rebours';
+
+  @override
+  String get countdownVoiceDescription =>
+      'Guidage vocal pour le début et la fin';
 }

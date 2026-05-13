@@ -78,4 +78,13 @@ class AppLocalizationsId extends AppLocalizations {
 
   @override
   String get weekNow => 'KINI';
+
+  @override
+  String get settingsTitle => 'PENGATURAN';
+
+  @override
+  String get countdownVoiceLabel => 'Suara Hitung Mundur';
+
+  @override
+  String get countdownVoiceDescription => 'Panduan suara untuk awal dan akhir';
 }

@@ -22,5 +22,8 @@
   "dailyBestSection": "日別ベスト  /  直近14日",
   "weeklyTotalSection": "週別合計  /  直近8週",
   "allRecordsSection": "全記録  /  {count}セッション",
-  "weekNow": "今週"
+  "weekNow": "今週",
+  "settingsTitle": "設定",
+  "countdownVoiceLabel": "カウントダウン音声",
+  "countdownVoiceDescription": "プランクの開始と終了を音声でガイド"
 }

@@ -78,4 +78,14 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get weekNow => 'NOW';
+
+  @override
+  String get settingsTitle => 'SETTINGS';
+
+  @override
+  String get countdownVoiceLabel => 'Countdown Voice';
+
+  @override
+  String get countdownVoiceDescription =>
+      'Voice guide for the start and finish';
 }

@@ -22,5 +22,8 @@
   "dailyBestSection": "TAGESBESTE  /  14 TAGE",
   "weeklyTotalSection": "WOCHENSUMME  /  8 WOCHEN",
   "allRecordsSection": "ALLE EINTRÄGE  /  {count} EINHEITEN",
-  "weekNow": "JETZT"
+  "weekNow": "JETZT",
+  "settingsTitle": "EINSTELLUNGEN",
+  "countdownVoiceLabel": "Countdown-Stimme",
+  "countdownVoiceDescription": "Sprachführung für Start und Ende"
 }

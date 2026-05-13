@@ -22,5 +22,8 @@
   "dailyBestSection": "दैनिक सर्वश्रेष्ठ  /  14 दिन",
   "weeklyTotalSection": "साप्ताहिक कुल  /  8 सप्ताह",
   "allRecordsSection": "सभी रिकॉर्ड  /  {count} सत्र",
-  "weekNow": "अभी"
+  "weekNow": "अभी",
+  "settingsTitle": "सेटिंग्स",
+  "countdownVoiceLabel": "काउंटडाउन आवाज़",
+  "countdownVoiceDescription": "शुरुआत और अंत के लिए आवाज़ मार्गदर्शन"
 }

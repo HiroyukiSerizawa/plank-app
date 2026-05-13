@@ -78,6 +78,15 @@ class AppLocalizationsZh extends AppLocalizations {
 
   @override
   String get weekNow => '本週';
+
+  @override
+  String get settingsTitle => '設定';
+
+  @override
+  String get countdownVoiceLabel => '倒數語音';
+
+  @override
+  String get countdownVoiceDescription => '以語音引導棒式的開始與結束';
 }
 
 /// The translations for Chinese, as used in Taiwan (`zh_TW`).
@@ -154,4 +163,13 @@ class AppLocalizationsZhTw extends AppLocalizationsZh {
 
   @override
   String get weekNow => '本週';
+
+  @override
+  String get settingsTitle => '設定';
+
+  @override
+  String get countdownVoiceLabel => '倒數語音';
+
+  @override
+  String get countdownVoiceDescription => '以語音引導棒式的開始與結束';
 }

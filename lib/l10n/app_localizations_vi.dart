@@ -78,4 +78,14 @@ class AppLocalizationsVi extends AppLocalizations {
 
   @override
   String get weekNow => 'TUẦN NÀY';
+
+  @override
+  String get settingsTitle => 'CÀI ĐẶT';
+
+  @override
+  String get countdownVoiceLabel => 'Giọng đếm ngược';
+
+  @override
+  String get countdownVoiceDescription =>
+      'Hướng dẫn bằng giọng cho lúc bắt đầu và kết thúc';
 }

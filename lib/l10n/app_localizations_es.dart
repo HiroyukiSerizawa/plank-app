@@ -78,4 +78,14 @@ class AppLocalizationsEs extends AppLocalizations {
 
   @override
   String get weekNow => 'AHORA';
+
+  @override
+  String get settingsTitle => 'AJUSTES';
+
+  @override
+  String get countdownVoiceLabel => 'Voz de cuenta atrás';
+
+  @override
+  String get countdownVoiceDescription =>
+      'Guía de voz para el inicio y el final';
 }

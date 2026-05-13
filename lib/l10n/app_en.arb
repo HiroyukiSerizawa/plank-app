@@ -97,5 +97,17 @@
   "weekNow": "NOW",
   "@weekNow": {
     "description": "Bar chart x-axis label for the current week"
+  },
+  "settingsTitle": "SETTINGS",
+  "@settingsTitle": {
+    "description": "AppBar title of the settings screen"
+  },
+  "countdownVoiceLabel": "Countdown Voice",
+  "@countdownVoiceLabel": {
+    "description": "Settings toggle label for SFX/voice countdown"
+  },
+  "countdownVoiceDescription": "Voice guide for the start and finish",
+  "@countdownVoiceDescription": {
+    "description": "Settings toggle description for SFX/voice countdown"
   }
 }

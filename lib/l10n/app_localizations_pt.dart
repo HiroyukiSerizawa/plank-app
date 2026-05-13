@@ -78,6 +78,15 @@ class AppLocalizationsPt extends AppLocalizations {
 
   @override
   String get weekNow => 'AGORA';
+
+  @override
+  String get settingsTitle => 'DEFINIÇÕES';
+
+  @override
+  String get countdownVoiceLabel => 'Voz da contagem decrescente';
+
+  @override
+  String get countdownVoiceDescription => 'Guia de voz para o início e o fim';
 }
 
 /// The translations for Portuguese, as used in Brazil (`pt_BR`).
@@ -154,4 +163,13 @@ class AppLocalizationsPtBr extends AppLocalizationsPt {
 
   @override
   String get weekNow => 'AGORA';
+
+  @override
+  String get settingsTitle => 'CONFIGURAÇÕES';
+
+  @override
+  String get countdownVoiceLabel => 'Voz da contagem regressiva';
+
+  @override
+  String get countdownVoiceDescription => 'Guia de voz para o início e o fim';
 }

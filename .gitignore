@@ -8,6 +8,10 @@
 .build/
 .buildlog/
 .history
+
+# Claude Code working files (project-local instructions, never committed)
+.claude/
+CLAUDE.md
 .svn/
 .swiftpm/
 migrate_working_dir/
