@@ -87,6 +87,12 @@ class AppLocalizationsPt extends AppLocalizations {
 
   @override
   String get countdownVoiceDescription => 'Guia de voz para o início e o fim';
+
+  @override
+  String get vibrationLabel => 'Vibração';
+
+  @override
+  String get vibrationDescription => 'Pulsa a cada contagem';
 }
 
 /// The translations for Portuguese, as used in Brazil (`pt_BR`).
@@ -172,4 +178,10 @@ class AppLocalizationsPtBr extends AppLocalizationsPt {
 
   @override
   String get countdownVoiceDescription => 'Guia de voz para o início e o fim';
+
+  @override
+  String get vibrationLabel => 'Vibração';
+
+  @override
+  String get vibrationDescription => 'Pulsa a cada contagem';
 }

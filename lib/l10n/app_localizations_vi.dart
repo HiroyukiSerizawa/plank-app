@@ -88,4 +88,10 @@ class AppLocalizationsVi extends AppLocalizations {
   @override
   String get countdownVoiceDescription =>
       'Hướng dẫn bằng giọng cho lúc bắt đầu và kết thúc';
+
+  @override
+  String get vibrationLabel => 'Rung';
+
+  @override
+  String get vibrationDescription => 'Rung theo mỗi nhịp đếm';
 }

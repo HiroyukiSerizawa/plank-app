@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import '../l10n/app_localizations.dart';
+import '../services/haptic_service.dart';
 import '../services/sound_service.dart';
 
 class SettingsScreen extends StatefulWidget {
@@ -11,16 +12,27 @@ class SettingsScreen extends StatefulWidget {
 
 class _SettingsScreenState extends State<SettingsScreen> {
   late bool _soundEnabled;
+  late bool _vibrationEnabled;
 
   @override
   void initState() {
     super.initState();
     _soundEnabled = SoundService.instance.enabled;
+    _vibrationEnabled = HapticService.instance.enabled;
   }
 
   Future<void> _toggleSound(bool value) async {
     setState(() => _soundEnabled = value);
     await SoundService.instance.setEnabled(value);
+  }
+
+  Future<void> _toggleVibration(bool value) async {
+    setState(() => _vibrationEnabled = value);
+    await HapticService.instance.setEnabled(value);
+    if (value) {
+      // Confirmation pulse so the user knows it works.
+      HapticService.instance.tick();
+    }
   }
 
   @override
@@ -74,6 +86,13 @@ class _SettingsScreenState extends State<SettingsScreen> {
                 description: l10n.countdownVoiceDescription,
                 value: _soundEnabled,
                 onChanged: _toggleSound,
+              ),
+              const SizedBox(height: 12),
+              _SettingsToggleCard(
+                label: l10n.vibrationLabel,
+                description: l10n.vibrationDescription,
+                value: _vibrationEnabled,
+                onChanged: _toggleVibration,
               ),
             ],
           ),

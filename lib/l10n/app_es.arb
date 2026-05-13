@@ -25,5 +25,7 @@
   "weekNow": "AHORA",
   "settingsTitle": "AJUSTES",
   "countdownVoiceLabel": "Voz de cuenta atrás",
-  "countdownVoiceDescription": "Guía de voz para el inicio y el final"
+  "countdownVoiceDescription": "Guía de voz para el inicio y el final",
+  "vibrationLabel": "Vibración",
+  "vibrationDescription": "Vibra con cada cuenta"
 }

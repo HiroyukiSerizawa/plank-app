@@ -88,4 +88,10 @@ class AppLocalizationsHi extends AppLocalizations {
   @override
   String get countdownVoiceDescription =>
       'शुरुआत और अंत के लिए आवाज़ मार्गदर्शन';
+
+  @override
+  String get vibrationLabel => 'कंपन';
+
+  @override
+  String get vibrationDescription => 'हर काउंटडाउन पर कंपन';
 }

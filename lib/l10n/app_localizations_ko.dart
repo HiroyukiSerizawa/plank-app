@@ -87,4 +87,10 @@ class AppLocalizationsKo extends AppLocalizations {
 
   @override
   String get countdownVoiceDescription => '플랭크의 시작과 끝을 음성으로 안내';
+
+  @override
+  String get vibrationLabel => '진동';
+
+  @override
+  String get vibrationDescription => '카운트다운에 맞춰 진동';
 }

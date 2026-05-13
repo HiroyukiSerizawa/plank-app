@@ -87,4 +87,10 @@ class AppLocalizationsDe extends AppLocalizations {
 
   @override
   String get countdownVoiceDescription => 'Sprachführung für Start und Ende';
+
+  @override
+  String get vibrationLabel => 'Vibration';
+
+  @override
+  String get vibrationDescription => 'Pulsiert im Takt des Countdowns';
 }

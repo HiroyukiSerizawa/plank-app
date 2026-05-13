@@ -88,4 +88,10 @@ class AppLocalizationsFr extends AppLocalizations {
   @override
   String get countdownVoiceDescription =>
       'Guidage vocal pour le début et la fin';
+
+  @override
+  String get vibrationLabel => 'Vibration';
+
+  @override
+  String get vibrationDescription => 'Vibre à chaque temps';
 }

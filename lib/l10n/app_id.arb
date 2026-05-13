@@ -25,5 +25,7 @@
   "weekNow": "KINI",
   "settingsTitle": "PENGATURAN",
   "countdownVoiceLabel": "Suara Hitung Mundur",
-  "countdownVoiceDescription": "Panduan suara untuk awal dan akhir"
+  "countdownVoiceDescription": "Panduan suara untuk awal dan akhir",
+  "vibrationLabel": "Getaran",
+  "vibrationDescription": "Bergetar pada setiap hitungan"
 }

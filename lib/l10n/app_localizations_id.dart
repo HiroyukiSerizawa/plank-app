@@ -87,4 +87,10 @@ class AppLocalizationsId extends AppLocalizations {
 
   @override
   String get countdownVoiceDescription => 'Panduan suara untuk awal dan akhir';
+
+  @override
+  String get vibrationLabel => 'Getaran';
+
+  @override
+  String get vibrationDescription => 'Bergetar pada setiap hitungan';
 }

@@ -25,5 +25,7 @@
   "weekNow": "JETZT",
   "settingsTitle": "EINSTELLUNGEN",
   "countdownVoiceLabel": "Countdown-Stimme",
-  "countdownVoiceDescription": "Sprachführung für Start und Ende"
+  "countdownVoiceDescription": "Sprachführung für Start und Ende",
+  "vibrationLabel": "Vibration",
+  "vibrationDescription": "Pulsiert im Takt des Countdowns"
 }

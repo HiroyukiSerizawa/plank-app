@@ -87,4 +87,10 @@ class AppLocalizationsJa extends AppLocalizations {
 
   @override
   String get countdownVoiceDescription => 'プランクの開始と終了を音声でガイド';
+
+  @override
+  String get vibrationLabel => 'バイブレーション';
+
+  @override
+  String get vibrationDescription => 'カウントダウンに合わせて振動';
 }

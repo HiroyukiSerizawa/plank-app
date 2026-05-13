@@ -273,6 +273,18 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Voice guide for the start and finish'**
   String get countdownVoiceDescription;
+
+  /// Settings toggle label for haptic feedback on countdown
+  ///
+  /// In en, this message translates to:
+  /// **'Vibration'**
+  String get vibrationLabel;
+
+  /// Settings toggle description for haptic feedback
+  ///
+  /// In en, this message translates to:
+  /// **'Pulse with each countdown beat'**
+  String get vibrationDescription;
 }
 
 class _AppLocalizationsDelegate

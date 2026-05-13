@@ -7,6 +7,7 @@ import '../l10n/app_localizations.dart';
 import '../models/record.dart';
 import '../services/database_service.dart';
 import '../services/ad_service.dart';
+import '../services/haptic_service.dart';
 import '../services/sound_service.dart';
 import 'history_screen.dart';
 import 'settings_screen.dart';
@@ -67,10 +68,13 @@ class _TimerScreenState extends State<TimerScreen>
     // (often 30s) would otherwise blank the timer mid-hold.
     WakelockPlus.enable();
 
-    // When the user has disabled the countdown voice, skip the pre-roll
+    // When the user has disabled BOTH sound AND vibration, skip the pre-roll
     // entirely and preserve the v1.0.3 tap-to-go UX. A silent 3-second prep
-    // would otherwise look broken to anyone who turned the sound off.
-    if (!SoundService.instance.enabled) {
+    // with no feedback would look broken. If either feedback channel is on,
+    // we still run the prep so the user gets their countdown cue.
+    final hasAnyFeedback = SoundService.instance.enabled ||
+        HapticService.instance.enabled;
+    if (!hasAnyFeedback) {
       setState(() {
         _elapsed = 0;
         _done = false;
@@ -87,16 +91,20 @@ class _TimerScreenState extends State<TimerScreen>
       _prepping = true;
       _prepRemaining = _prepSeconds;
     });
-    // Fire the first SFX on entry; the periodic timer below handles 2 and 1.
+    // Fire the first SFX/haptic on entry; the periodic timer below handles
+    // the remaining beats (2 and 1).
     SoundService.instance.play('$_prepSeconds.mp3');
+    HapticService.instance.tick();
     _timer = Timer.periodic(const Duration(seconds: 1), (t) {
       final next = _prepRemaining - 1;
       if (next > 0) {
         setState(() => _prepRemaining = next);
         SoundService.instance.play('$next.mp3');
+        HapticService.instance.tick();
       } else {
         t.cancel();
         SoundService.instance.play('go.mp3');
+        HapticService.instance.hit();
         _startRunning();
       }
     });
@@ -116,6 +124,7 @@ class _TimerScreenState extends State<TimerScreen>
       final remaining = _targetSeconds - next;
       if (_targetSeconds >= 5 && remaining >= 1 && remaining <= 5) {
         SoundService.instance.play('$remaining.mp3');
+        HapticService.instance.tick();
       }
       if (next >= _targetSeconds) _finish();
     });
@@ -149,6 +158,7 @@ class _TimerScreenState extends State<TimerScreen>
   Future<void> _finish() async {
     _timer?.cancel();
     SoundService.instance.play('done.mp3');
+    HapticService.instance.hit();
     await WakelockPlus.disable();
     setState(() {
       _running = false;

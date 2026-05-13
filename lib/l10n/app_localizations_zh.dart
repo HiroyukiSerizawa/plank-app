@@ -87,6 +87,12 @@ class AppLocalizationsZh extends AppLocalizations {
 
   @override
   String get countdownVoiceDescription => '以語音引導棒式的開始與結束';
+
+  @override
+  String get vibrationLabel => '震動';
+
+  @override
+  String get vibrationDescription => '隨倒數震動';
 }
 
 /// The translations for Chinese, as used in Taiwan (`zh_TW`).
@@ -172,4 +178,10 @@ class AppLocalizationsZhTw extends AppLocalizationsZh {
 
   @override
   String get countdownVoiceDescription => '以語音引導棒式的開始與結束';
+
+  @override
+  String get vibrationLabel => '震動';
+
+  @override
+  String get vibrationDescription => '隨倒數震動';
 }

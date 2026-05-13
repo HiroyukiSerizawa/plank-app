@@ -25,5 +25,7 @@
   "weekNow": "AGORA",
   "settingsTitle": "DEFINIÇÕES",
   "countdownVoiceLabel": "Voz da contagem decrescente",
-  "countdownVoiceDescription": "Guia de voz para o início e o fim"
+  "countdownVoiceDescription": "Guia de voz para o início e o fim",
+  "vibrationLabel": "Vibração",
+  "vibrationDescription": "Pulsa a cada contagem"
 }

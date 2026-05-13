@@ -25,5 +25,7 @@
   "weekNow": "本週",
   "settingsTitle": "設定",
   "countdownVoiceLabel": "倒數語音",
-  "countdownVoiceDescription": "以語音引導棒式的開始與結束"
+  "countdownVoiceDescription": "以語音引導棒式的開始與結束",
+  "vibrationLabel": "震動",
+  "vibrationDescription": "隨倒數震動"
 }

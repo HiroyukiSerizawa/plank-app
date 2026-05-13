@@ -109,5 +109,13 @@
   "countdownVoiceDescription": "Voice guide for the start and finish",
   "@countdownVoiceDescription": {
     "description": "Settings toggle description for SFX/voice countdown"
+  },
+  "vibrationLabel": "Vibration",
+  "@vibrationLabel": {
+    "description": "Settings toggle label for haptic feedback on countdown"
+  },
+  "vibrationDescription": "Pulse with each countdown beat",
+  "@vibrationDescription": {
+    "description": "Settings toggle description for haptic feedback"
   }
 }

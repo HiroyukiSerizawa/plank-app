@@ -25,5 +25,7 @@
   "weekNow": "TUẦN NÀY",
   "settingsTitle": "CÀI ĐẶT",
   "countdownVoiceLabel": "Giọng đếm ngược",
-  "countdownVoiceDescription": "Hướng dẫn bằng giọng cho lúc bắt đầu và kết thúc"
+  "countdownVoiceDescription": "Hướng dẫn bằng giọng cho lúc bắt đầu và kết thúc",
+  "vibrationLabel": "Rung",
+  "vibrationDescription": "Rung theo mỗi nhịp đếm"
 }

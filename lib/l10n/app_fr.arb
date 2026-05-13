@@ -25,5 +25,7 @@
   "weekNow": "MAINT.",
   "settingsTitle": "PARAMÈTRES",
   "countdownVoiceLabel": "Voix du compte à rebours",
-  "countdownVoiceDescription": "Guidage vocal pour le début et la fin"
+  "countdownVoiceDescription": "Guidage vocal pour le début et la fin",
+  "vibrationLabel": "Vibration",
+  "vibrationDescription": "Vibre à chaque temps"
 }

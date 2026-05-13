@@ -25,5 +25,7 @@
   "weekNow": "अभी",
   "settingsTitle": "सेटिंग्स",
   "countdownVoiceLabel": "काउंटडाउन आवाज़",
-  "countdownVoiceDescription": "शुरुआत और अंत के लिए आवाज़ मार्गदर्शन"
+  "countdownVoiceDescription": "शुरुआत और अंत के लिए आवाज़ मार्गदर्शन",
+  "vibrationLabel": "कंपन",
+  "vibrationDescription": "हर काउंटडाउन पर कंपन"
 }
