@@ -64,8 +64,15 @@ class _TimerScreenState extends State<TimerScreen>
   }
 
   Future<void> _loadStreak() async {
-    final value = await DatabaseService.getStreak();
-    if (mounted) setState(() => _streak = value);
+    // Defensive: tolerate DB initialization failures (e.g. widget tests where
+    // sqflite_common_ffi isn't wired). The streak badge is purely cosmetic
+    // and should never crash the home screen.
+    try {
+      final value = await DatabaseService.getStreak();
+      if (mounted) setState(() => _streak = value);
+    } catch (_) {
+      // Leave streak at 0.
+    }
   }
 
   void _start() {
