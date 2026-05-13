@@ -27,5 +27,6 @@
   "countdownVoiceLabel": "काउंटडाउन आवाज़",
   "countdownVoiceDescription": "शुरुआत और अंत के लिए आवाज़ मार्गदर्शन",
   "vibrationLabel": "कंपन",
-  "vibrationDescription": "हर काउंटडाउन पर कंपन"
+  "vibrationDescription": "हर काउंटडाउन पर कंपन",
+  "streakDays": "{count} दिन की लय"
 }

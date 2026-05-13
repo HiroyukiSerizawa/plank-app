@@ -27,5 +27,6 @@
   "countdownVoiceLabel": "Giọng đếm ngược",
   "countdownVoiceDescription": "Hướng dẫn bằng giọng cho lúc bắt đầu và kết thúc",
   "vibrationLabel": "Rung",
-  "vibrationDescription": "Rung theo mỗi nhịp đếm"
+  "vibrationDescription": "Rung theo mỗi nhịp đếm",
+  "streakDays": "Chuỗi {count} ngày"
 }

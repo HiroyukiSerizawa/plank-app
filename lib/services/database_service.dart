@@ -38,6 +38,37 @@ class DatabaseService {
     await db.delete('records', where: 'id = ?', whereArgs: [id]);
   }
 
+  /// Consecutive days (ending today or yesterday) with at least one record.
+  /// Returns 0 if there is no record in the past 1 day — the streak has
+  /// already broken.
+  static Future<int> getStreak() async {
+    final records = await getAll();
+    if (records.isEmpty) return 0;
+
+    final now = DateTime.now();
+    final today = DateTime(now.year, now.month, now.day);
+
+    final daySet = <DateTime>{};
+    for (final r in records) {
+      daySet.add(DateTime(r.date.year, r.date.month, r.date.day));
+    }
+    final days = daySet.toList()..sort((a, b) => b.compareTo(a));
+
+    // If the most recent recorded day is older than yesterday, streak == 0.
+    final daysSinceLatest = today.difference(days.first).inDays;
+    if (daysSinceLatest > 1) return 0;
+
+    var streak = 1;
+    for (var i = 1; i < days.length; i++) {
+      if (days[i - 1].difference(days[i]).inDays == 1) {
+        streak++;
+      } else {
+        break;
+      }
+    }
+    return streak;
+  }
+
   static Future<Map<String, dynamic>> getStats() async {
     final records = await getAll();
     if (records.isEmpty) {

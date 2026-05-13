@@ -27,5 +27,6 @@
   "countdownVoiceLabel": "Voz de cuenta atrás",
   "countdownVoiceDescription": "Guía de voz para el inicio y el final",
   "vibrationLabel": "Vibración",
-  "vibrationDescription": "Vibra con cada cuenta"
+  "vibrationDescription": "Vibra con cada cuenta",
+  "streakDays": "Racha de {count} días"
 }

@@ -94,4 +94,9 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get vibrationDescription => 'Vibre à chaque temps';
+
+  @override
+  String streakDays(int count) {
+    return 'Série de $count jours';
+  }
 }

@@ -93,6 +93,11 @@ class AppLocalizationsPt extends AppLocalizations {
 
   @override
   String get vibrationDescription => 'Pulsa a cada contagem';
+
+  @override
+  String streakDays(int count) {
+    return 'Sequência de $count dias';
+  }
 }
 
 /// The translations for Portuguese, as used in Brazil (`pt_BR`).
@@ -184,4 +189,9 @@ class AppLocalizationsPtBr extends AppLocalizationsPt {
 
   @override
   String get vibrationDescription => 'Pulsa a cada contagem';
+
+  @override
+  String streakDays(int count) {
+    return 'Sequência de $count dias';
+  }
 }

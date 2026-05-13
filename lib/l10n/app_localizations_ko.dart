@@ -93,4 +93,9 @@ class AppLocalizationsKo extends AppLocalizations {
 
   @override
   String get vibrationDescription => '카운트다운에 맞춰 진동';
+
+  @override
+  String streakDays(int count) {
+    return '$count일 연속';
+  }
 }

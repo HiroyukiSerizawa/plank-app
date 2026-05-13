@@ -27,5 +27,6 @@
   "countdownVoiceLabel": "Countdown-Stimme",
   "countdownVoiceDescription": "Sprachführung für Start und Ende",
   "vibrationLabel": "Vibration",
-  "vibrationDescription": "Pulsiert im Takt des Countdowns"
+  "vibrationDescription": "Pulsiert im Takt des Countdowns",
+  "streakDays": "{count}-Tage-Serie"
 }

@@ -94,4 +94,9 @@ class AppLocalizationsVi extends AppLocalizations {
 
   @override
   String get vibrationDescription => 'Rung theo mỗi nhịp đếm';
+
+  @override
+  String streakDays(int count) {
+    return 'Chuỗi $count ngày';
+  }
 }

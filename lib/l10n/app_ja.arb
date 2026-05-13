@@ -27,5 +27,6 @@
   "countdownVoiceLabel": "カウントダウン音声",
   "countdownVoiceDescription": "プランクの開始と終了を音声でガイド",
   "vibrationLabel": "バイブレーション",
-  "vibrationDescription": "カウントダウンに合わせて振動"
+  "vibrationDescription": "カウントダウンに合わせて振動",
+  "streakDays": "{count}日連続"
 }

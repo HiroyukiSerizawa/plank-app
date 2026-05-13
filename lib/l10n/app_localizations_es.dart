@@ -94,4 +94,9 @@ class AppLocalizationsEs extends AppLocalizations {
 
   @override
   String get vibrationDescription => 'Vibra con cada cuenta';
+
+  @override
+  String streakDays(int count) {
+    return 'Racha de $count días';
+  }
 }

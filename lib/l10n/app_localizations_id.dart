@@ -93,4 +93,9 @@ class AppLocalizationsId extends AppLocalizations {
 
   @override
   String get vibrationDescription => 'Bergetar pada setiap hitungan';
+
+  @override
+  String streakDays(int count) {
+    return '$count hari berturut';
+  }
 }

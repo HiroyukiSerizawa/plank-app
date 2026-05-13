@@ -94,4 +94,9 @@ class AppLocalizationsHi extends AppLocalizations {
 
   @override
   String get vibrationDescription => 'हर काउंटडाउन पर कंपन';
+
+  @override
+  String streakDays(int count) {
+    return '$count दिन की लय';
+  }
 }

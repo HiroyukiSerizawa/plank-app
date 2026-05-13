@@ -37,6 +37,10 @@ class _TimerScreenState extends State<TimerScreen>
   bool _prepping = false;
   int _prepRemaining = 0;
 
+  // Consecutive recording days. Loaded from DB and refreshed after each
+  // completed/given-up session.
+  int _streak = 0;
+
   Timer? _timer;
   late AnimationController _pulseController;
   late Animation<double> _pulseAnim;
@@ -56,6 +60,12 @@ class _TimerScreenState extends State<TimerScreen>
     _banner = AdService.createBanner(
       onLoaded: (ad) => setState(() => _bannerReady = true),
     );
+    _loadStreak();
+  }
+
+  Future<void> _loadStreak() async {
+    final value = await DatabaseService.getStreak();
+    if (mounted) setState(() => _streak = value);
   }
 
   void _start() {
@@ -153,6 +163,7 @@ class _TimerScreenState extends State<TimerScreen>
     await DatabaseService.insert(
       Record(date: DateTime.now(), seconds: _elapsed),
     );
+    await _loadStreak();
   }
 
   Future<void> _finish() async {
@@ -167,6 +178,7 @@ class _TimerScreenState extends State<TimerScreen>
     await DatabaseService.insert(
       Record(date: DateTime.now(), seconds: _elapsed),
     );
+    await _loadStreak();
   }
 
   void _setCustom() async {
@@ -357,6 +369,12 @@ class _TimerScreenState extends State<TimerScreen>
                   ),
                 ),
 
+                // ── Streak バッジ（連続日数）。1日以上で表示。
+                if (_streak > 0 && !_running && !_prepping) ...[
+                  const SizedBox(height: 10),
+                  _StreakBadge(streak: _streak, label: l10n.streakDays(_streak)),
+                ],
+
                 const SizedBox(height: 20),
 
                 // ── タイマー円
@@ -431,6 +449,51 @@ class _TimerScreenState extends State<TimerScreen>
                     color: const Color(0xFF00D4FF),
                     onTap: _done ? () => setState(() => _done = false) : _start,
                   ),
+              ],
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+// ─────────────────────────────────────────
+// Streak バッジ
+// ─────────────────────────────────────────
+class _StreakBadge extends StatelessWidget {
+  final int streak;
+  final String label;
+
+  const _StreakBadge({required this.streak, required this.label});
+
+  @override
+  Widget build(BuildContext context) {
+    const accent = Color(0xFFFFB347);
+    return Container(
+      padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
+      decoration: BoxDecoration(
+        color: accent.withValues(alpha: 0.08),
+        border: Border.all(color: accent.withValues(alpha: 0.5), width: 1),
+        borderRadius: BorderRadius.circular(20),
+        boxShadow: [
+          BoxShadow(color: accent.withValues(alpha: 0.25), blurRadius: 10),
+        ],
+      ),
+      child: Row(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          const Text('🔥', style: TextStyle(fontSize: 14)),
+          const SizedBox(width: 6),
+          Text(
+            label,
+            style: TextStyle(
+              fontSize: 11,
+              fontWeight: FontWeight.w700,
+              letterSpacing: 1.5,
+              color: accent,
+              shadows: [
+                Shadow(color: accent.withValues(alpha: 0.6), blurRadius: 6),
               ],
             ),
           ),

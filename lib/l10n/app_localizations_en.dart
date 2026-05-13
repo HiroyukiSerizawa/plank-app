@@ -94,4 +94,9 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get vibrationDescription => 'Pulse with each countdown beat';
+
+  @override
+  String streakDays(int count) {
+    return '$count-day streak';
+  }
 }

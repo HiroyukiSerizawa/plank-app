@@ -285,6 +285,12 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Pulse with each countdown beat'**
   String get vibrationDescription;
+
+  /// Streak badge shown on the home screen when the user has consecutive recording days
+  ///
+  /// In en, this message translates to:
+  /// **'{count}-day streak'**
+  String streakDays(int count);
 }
 
 class _AppLocalizationsDelegate

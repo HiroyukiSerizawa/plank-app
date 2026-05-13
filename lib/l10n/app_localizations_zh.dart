@@ -93,6 +93,11 @@ class AppLocalizationsZh extends AppLocalizations {
 
   @override
   String get vibrationDescription => '隨倒數震動';
+
+  @override
+  String streakDays(int count) {
+    return '連續 $count 天';
+  }
 }
 
 /// The translations for Chinese, as used in Taiwan (`zh_TW`).
@@ -184,4 +189,9 @@ class AppLocalizationsZhTw extends AppLocalizationsZh {
 
   @override
   String get vibrationDescription => '隨倒數震動';
+
+  @override
+  String streakDays(int count) {
+    return '連續 $count 天';
+  }
 }

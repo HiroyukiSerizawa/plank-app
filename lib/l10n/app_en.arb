@@ -117,5 +117,15 @@
   "vibrationDescription": "Pulse with each countdown beat",
   "@vibrationDescription": {
     "description": "Settings toggle description for haptic feedback"
+  },
+  "streakDays": "{count}-day streak",
+  "@streakDays": {
+    "description": "Streak badge shown on the home screen when the user has consecutive recording days",
+    "placeholders": {
+      "count": {
+        "type": "int",
+        "example": "5"
+      }
+    }
   }
 }

@@ -93,4 +93,9 @@ class AppLocalizationsJa extends AppLocalizations {
 
   @override
   String get vibrationDescription => 'カウントダウンに合わせて振動';
+
+  @override
+  String streakDays(int count) {
+    return '$count日連続';
+  }
 }

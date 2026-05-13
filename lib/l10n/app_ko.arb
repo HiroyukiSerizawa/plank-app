@@ -27,5 +27,6 @@
   "countdownVoiceLabel": "카운트다운 음성",
   "countdownVoiceDescription": "플랭크의 시작과 끝을 음성으로 안내",
   "vibrationLabel": "진동",
-  "vibrationDescription": "카운트다운에 맞춰 진동"
+  "vibrationDescription": "카운트다운에 맞춰 진동",
+  "streakDays": "{count}일 연속"
 }
