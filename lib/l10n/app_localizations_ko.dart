@@ -9,10 +9,7 @@ class AppLocalizationsKo extends AppLocalizations {
   AppLocalizationsKo([String locale = 'ko']) : super(locale);
 
   @override
-  String get slogan => '지금 플랭크하자';
-
-  @override
-  String get secRemaining => '남은 초';
+  String get slogan => 'LET\'S PLANK NOW';
 
   @override
   String get secondsLabel => '초';

@@ -124,12 +124,6 @@ abstract class AppLocalizations {
   /// **'LET\'S PLANK NOW'**
   String get slogan;
 
-  /// Label under the timer countdown while running
-  ///
-  /// In en, this message translates to:
-  /// **'SEC REMAINING'**
-  String get secRemaining;
-
   /// Label under the timer ring when idle
   ///
   /// In en, this message translates to:

@@ -4,10 +4,6 @@
   "@slogan": {
     "description": "App tagline shown above the timer ring (inclusive 'let's' form)"
   },
-  "secRemaining": "SEC REMAINING",
-  "@secRemaining": {
-    "description": "Label under the timer countdown while running"
-  },
   "secondsLabel": "SECONDS",
   "@secondsLabel": {
     "description": "Label under the timer ring when idle"

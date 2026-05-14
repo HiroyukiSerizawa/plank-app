@@ -278,7 +278,6 @@ class _TimerScreenState extends State<TimerScreen>
                   done: _done,
                   pulseAnim: _pulseAnim,
                   label: _timeLabel,
-                  remainingLabel: l10n.secRemaining,
                   secondsLabel: l10n.secondsLabel,
                 ),
 
@@ -421,7 +420,6 @@ class _TimerRing extends StatelessWidget {
   final bool done;
   final Animation<double> pulseAnim;
   final String label;
-  final String remainingLabel;
   final String secondsLabel;
 
   const _TimerRing({
@@ -430,7 +428,6 @@ class _TimerRing extends StatelessWidget {
     required this.done,
     required this.pulseAnim,
     required this.label,
-    required this.remainingLabel,
     required this.secondsLabel,
   });
 
@@ -490,9 +487,9 @@ class _TimerRing extends StatelessWidget {
                       ],
                     ),
                   ),
-                  if (!done)
+                  if (!done && !running)
                     Text(
-                      running ? remainingLabel : secondsLabel,
+                      secondsLabel,
                       style: TextStyle(
                         fontSize: 10,
                         letterSpacing: 3,
