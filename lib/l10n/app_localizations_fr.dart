@@ -111,11 +111,4 @@ class AppLocalizationsFr extends AppLocalizations {
   @override
   String get soundDescription =>
       'Coupure générale. Désactivé : tous les sons coupés.';
-
-  @override
-  String get tickLabel => 'Tic pendant la planche';
-
-  @override
-  String get tickDescription =>
-      'Battement doux par seconde pour combler le silence';
 }

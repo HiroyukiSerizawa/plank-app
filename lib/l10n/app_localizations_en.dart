@@ -111,10 +111,4 @@ class AppLocalizationsEn extends AppLocalizations {
   @override
   String get soundDescription =>
       'Master mute. When off, all sounds are silenced.';
-
-  @override
-  String get tickLabel => 'Tick during plank';
-
-  @override
-  String get tickDescription => 'Soft per-second beat to fill the silence';
 }

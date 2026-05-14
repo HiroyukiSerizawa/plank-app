@@ -110,13 +110,6 @@ class AppLocalizationsPt extends AppLocalizations {
   @override
   String get soundDescription =>
       'Silenciar geral. Quando desligado, todos os sons silenciados.';
-
-  @override
-  String get tickLabel => 'Tique durante a prancha';
-
-  @override
-  String get tickDescription =>
-      'Batida suave por segundo para preencher o silêncio';
 }
 
 /// The translations for Portuguese, as used in Brazil (`pt_BR`).
@@ -225,11 +218,4 @@ class AppLocalizationsPtBr extends AppLocalizationsPt {
   @override
   String get soundDescription =>
       'Mudo geral. Quando desligado, todos os sons silenciados.';
-
-  @override
-  String get tickLabel => 'Tique durante a prancha';
-
-  @override
-  String get tickDescription =>
-      'Batida suave por segundo para preencher o silêncio';
 }

@@ -31,7 +31,5 @@
   "streakDays": "{count}-Tage-Serie",
   "shareRecordMessage": "Habe die Plank {seconds} Sekunden gehalten! 💪\n\nPlank Now — der schnörkellose Plank-Timer:\nhttps://play.google.com/store/apps/details?id=com.thunderstruck.plank_app",
   "soundLabel": "Ton",
-  "soundDescription": "Master-Stummschaltung. Aus = alle Töne stumm.",
-  "tickLabel": "Tick während Plank",
-  "tickDescription": "Sanfter Sekundentakt zur Füllung der Stille"
+  "soundDescription": "Master-Stummschaltung. Aus = alle Töne stumm."
 }

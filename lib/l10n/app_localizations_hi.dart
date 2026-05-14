@@ -110,10 +110,4 @@ class AppLocalizationsHi extends AppLocalizations {
 
   @override
   String get soundDescription => 'मास्टर म्यूट। बंद करने पर सभी ध्वनियाँ शांत।';
-
-  @override
-  String get tickLabel => 'प्लैंक के दौरान टिक';
-
-  @override
-  String get tickDescription => 'मौन भरने के लिए हर सेकंड की हल्की धड़कन';
 }

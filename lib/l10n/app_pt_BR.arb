@@ -31,7 +31,5 @@
   "streakDays": "Sequência de {count} dias",
   "shareRecordMessage": "Aguentei a prancha por {seconds} segundos! 💪\n\nPlank Now — o cronômetro de prancha direto ao ponto:\nhttps://play.google.com/store/apps/details?id=com.thunderstruck.plank_app",
   "soundLabel": "Som",
-  "soundDescription": "Mudo geral. Quando desligado, todos os sons silenciados.",
-  "tickLabel": "Tique durante a prancha",
-  "tickDescription": "Batida suave por segundo para preencher o silêncio"
+  "soundDescription": "Mudo geral. Quando desligado, todos os sons silenciados."
 }

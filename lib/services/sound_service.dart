@@ -9,17 +9,13 @@ import 'package:shared_preferences/shared_preferences.dart';
 /// 展開し、Audio HAL とのコネクションも確立する。これにより `start()` 呼び
 /// 出し時のコールド起動遅延（"3" の頭が切れる現象）を回避する。
 ///
-/// プリロード対象は v1.0.4 で実使用する 8 ファイル（5, 4, 3, 2, 1, go, done,
-/// tick）のみ。10-6.mp3 は同梱されているが将来の長尺セッション向け予約の
-/// ためメモリには載せない。
+/// プリロード対象は v1.0.4 で実使用する 7 ファイル（5, 4, 3, 2, 1, go, done）
+/// のみ。10-6.mp3 は同梱されているが将来の長尺セッション向け予約のため
+/// メモリには載せない。
 ///
-/// 3 レベルのフラグ：
-/// - master: 全 SFX を一括 OFF（ミュート）。これが OFF なら下の voice/tick
-///   は無視される。
+/// 2 レベルのフラグ：
+/// - master: 全 SFX を一括 OFF（ミュート）。これが OFF なら voice は鳴らない。
 /// - voice: 3-2-1/GO!/5-4-3-2-1/DONE! のカウントダウン声。
-/// - tick: プランク本番中、毎秒鳴る軽い拍子音。
-///
-/// `play()` は voice 系、`playTick()` は tick 専用。
 class SoundService {
   SoundService._();
   static final SoundService instance = SoundService._();
@@ -28,7 +24,6 @@ class SoundService {
   // 既存ユーザーの値を壊さず引き継ぐ。
   static const _prefsKeyMaster = 'sound_enabled';
   static const _prefsKeyVoice = 'sound_voice_enabled';
-  static const _prefsKeyTick = 'sound_tick_enabled';
 
   static const _preloadAssets = [
     '5.mp3',
@@ -38,7 +33,6 @@ class SoundService {
     '1.mp3',
     'go.mp3',
     'done.mp3',
-    'tick.mp3',
   ];
 
   final Map<String, AudioPool> _pools = {};
@@ -49,21 +43,16 @@ class SoundService {
 
   bool _masterEnabled = true;
   bool _voiceEnabled = true;
-  bool _tickEnabled = true;
   bool _initialized = false;
 
   bool get masterEnabled => _masterEnabled;
   bool get voiceEnabled => _voiceEnabled;
-  bool get tickEnabled => _tickEnabled;
 
   /// voice が実際に鳴る状態か（master AND voice）。
   bool get voiceActive => _masterEnabled && _voiceEnabled;
 
-  /// tick が実際に鳴る状態か（master AND tick）。
-  bool get tickActive => _masterEnabled && _tickEnabled;
-
   /// 何かしらの SFX が鳴る状態か（プリロール skip 判定で参照される）。
-  bool get enabled => voiceActive || tickActive;
+  bool get enabled => voiceActive;
 
   Future<void> init() async {
     if (_initialized) return;
@@ -71,7 +60,6 @@ class SoundService {
     final prefs = await SharedPreferences.getInstance();
     _masterEnabled = prefs.getBool(_prefsKeyMaster) ?? true;
     _voiceEnabled = prefs.getBool(_prefsKeyVoice) ?? true;
-    _tickEnabled = prefs.getBool(_prefsKeyTick) ?? true;
     for (final name in _preloadAssets) {
       _pools[name] = await AudioPool.create(
         source: AssetSource('sounds/$name'),
@@ -98,12 +86,6 @@ class SoundService {
     await prefs.setBool(_prefsKeyVoice, value);
   }
 
-  Future<void> setTickEnabled(bool value) async {
-    _tickEnabled = value;
-    final prefs = await SharedPreferences.getInstance();
-    await prefs.setBool(_prefsKeyTick, value);
-  }
-
   /// カウントダウン声系（数字 / go / done）の即時再生。
   /// master または voice が OFF、もしくはプリロード対象外なら何もしない。
   Future<void> play(String asset) async {
@@ -112,14 +94,6 @@ class SoundService {
     if (pool == null) return;
     // Fire-and-forget: タイマーコールバックをブロックしない。
     unawaited(pool.start().then((stopFn) => _lastStops[asset] = stopFn));
-  }
-
-  /// 本番中の毎秒 tick 音。master または tick が OFF なら何もしない。
-  Future<void> playTick() async {
-    if (!tickActive) return;
-    final pool = _pools['tick.mp3'];
-    if (pool == null) return;
-    unawaited(pool.start().then((stopFn) => _lastStops['tick.mp3'] = stopFn));
   }
 
   /// 全プレイヤー停止。Abort / GiveUp 時に呼ぶ。

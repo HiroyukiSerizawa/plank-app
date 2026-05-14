@@ -110,11 +110,4 @@ class AppLocalizationsId extends AppLocalizations {
   @override
   String get soundDescription =>
       'Bisukan master. Saat mati, semua suara dibisukan.';
-
-  @override
-  String get tickLabel => 'Tik selama plank';
-
-  @override
-  String get tickDescription =>
-      'Ketukan lembut per detik untuk mengisi keheningan';
 }

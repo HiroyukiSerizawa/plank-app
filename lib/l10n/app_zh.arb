@@ -31,7 +31,5 @@
   "streakDays": "連續 {count} 天",
   "shareRecordMessage": "我撐了 {seconds} 秒棒式！💪\n\nPlank Now — 極簡棒式計時器：\nhttps://play.google.com/store/apps/details?id=com.thunderstruck.plank_app",
   "soundLabel": "声音",
-  "soundDescription": "总开关静音。关闭后所有声音都将静音",
-  "tickLabel": "平板支撑中的节拍音",
-  "tickDescription": "填补静默的轻柔每秒节拍"
+  "soundDescription": "总开关静音。关闭后所有声音都将静音"
 }

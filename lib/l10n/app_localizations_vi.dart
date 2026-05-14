@@ -110,10 +110,4 @@ class AppLocalizationsVi extends AppLocalizations {
 
   @override
   String get soundDescription => 'Tắt tổng. Khi tắt, mọi âm thanh đều im lặng.';
-
-  @override
-  String get tickLabel => 'Tích tắc khi plank';
-
-  @override
-  String get tickDescription => 'Nhịp nhẹ mỗi giây để lấp đầy khoảng lặng';
 }

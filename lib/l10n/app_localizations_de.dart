@@ -110,10 +110,4 @@ class AppLocalizationsDe extends AppLocalizations {
   @override
   String get soundDescription =>
       'Master-Stummschaltung. Aus = alle Töne stumm.';
-
-  @override
-  String get tickLabel => 'Tick während Plank';
-
-  @override
-  String get tickDescription => 'Sanfter Sekundentakt zur Füllung der Stille';
 }

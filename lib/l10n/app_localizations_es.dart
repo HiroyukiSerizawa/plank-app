@@ -111,11 +111,4 @@ class AppLocalizationsEs extends AppLocalizations {
   @override
   String get soundDescription =>
       'Silencio general. Apagado: todos los sonidos en silencio.';
-
-  @override
-  String get tickLabel => 'Tic durante la plancha';
-
-  @override
-  String get tickDescription =>
-      'Latido suave por segundo para llenar el silencio';
 }

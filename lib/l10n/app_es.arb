@@ -31,7 +31,5 @@
   "streakDays": "Racha de {count} días",
   "shareRecordMessage": "¡Aguanté la plancha {seconds} segundos! 💪\n\nPlank Now — el temporizador de plancha sin adornos:\nhttps://play.google.com/store/apps/details?id=com.thunderstruck.plank_app",
   "soundLabel": "Sonido",
-  "soundDescription": "Silencio general. Apagado: todos los sonidos en silencio.",
-  "tickLabel": "Tic durante la plancha",
-  "tickDescription": "Latido suave por segundo para llenar el silencio"
+  "soundDescription": "Silencio general. Apagado: todos los sonidos en silencio."
 }

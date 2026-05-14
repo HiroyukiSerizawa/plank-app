@@ -13,7 +13,6 @@ class SettingsScreen extends StatefulWidget {
 class _SettingsScreenState extends State<SettingsScreen> {
   late bool _master;
   late bool _voice;
-  late bool _tick;
   late bool _vibrationEnabled;
 
   @override
@@ -21,7 +20,6 @@ class _SettingsScreenState extends State<SettingsScreen> {
     super.initState();
     _master = SoundService.instance.masterEnabled;
     _voice = SoundService.instance.voiceEnabled;
-    _tick = SoundService.instance.tickEnabled;
     _vibrationEnabled = HapticService.instance.enabled;
   }
 
@@ -33,15 +31,6 @@ class _SettingsScreenState extends State<SettingsScreen> {
   Future<void> _toggleVoice(bool value) async {
     setState(() => _voice = value);
     await SoundService.instance.setVoiceEnabled(value);
-  }
-
-  Future<void> _toggleTick(bool value) async {
-    setState(() => _tick = value);
-    await SoundService.instance.setTickEnabled(value);
-    if (value && _master) {
-      // Confirmation tick so the user can hear what they just enabled.
-      SoundService.instance.playTick();
-    }
   }
 
   Future<void> _toggleVibration(bool value) async {
@@ -111,14 +100,6 @@ class _SettingsScreenState extends State<SettingsScreen> {
                 description: l10n.countdownVoiceDescription,
                 value: _voice,
                 onChanged: _toggleVoice,
-                enabled: _master,
-              ),
-              const SizedBox(height: 12),
-              _SettingsToggleCard(
-                label: l10n.tickLabel,
-                description: l10n.tickDescription,
-                value: _tick,
-                onChanged: _toggleTick,
                 enabled: _master,
               ),
               const SizedBox(height: 12),

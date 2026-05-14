@@ -109,10 +109,4 @@ class AppLocalizationsKo extends AppLocalizations {
 
   @override
   String get soundDescription => '마스터 음소거. 끄면 모든 소리가 무음 처리됩니다.';
-
-  @override
-  String get tickLabel => '플랭크 중 비트음';
-
-  @override
-  String get tickDescription => '정적을 채우는 부드러운 1초 비트';
 }

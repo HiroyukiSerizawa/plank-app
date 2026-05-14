@@ -309,18 +309,6 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Master mute. When off, all sounds are silenced.'**
   String get soundDescription;
-
-  /// Settings toggle label for the per-second tick during the plank
-  ///
-  /// In en, this message translates to:
-  /// **'Tick during plank'**
-  String get tickLabel;
-
-  /// Settings toggle description for the per-second tick
-  ///
-  /// In en, this message translates to:
-  /// **'Soft per-second beat to fill the silence'**
-  String get tickDescription;
 }
 
 class _AppLocalizationsDelegate
