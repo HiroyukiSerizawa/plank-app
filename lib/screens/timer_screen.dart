@@ -133,6 +133,11 @@ class _TimerScreenState extends State<TimerScreen>
       _running = true;
       _elapsed = 0;
     });
+    // Beat #1 aligned with the GO! cue (T=0 of the running phase).
+    // Without this the periodic tick below wouldn't fire until T=1, leaving
+    // a one-second silent gap between GO! and the first body tick that the
+    // user perceives as broken rhythm.
+    SoundService.instance.playTick();
     _timer = Timer.periodic(const Duration(seconds: 1), (_) {
       final next = _elapsed + 1;
       setState(() => _elapsed = next);
