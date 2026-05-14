@@ -29,5 +29,9 @@
   "vibrationLabel": "バイブレーション",
   "vibrationDescription": "カウントダウンに合わせて振動",
   "streakDays": "{count}日連続",
-  "shareRecordMessage": "プランクを {seconds}秒キープできた！💪\n\nPlank Now — シンプル一択のプランクタイマー：\nhttps://play.google.com/store/apps/details?id=com.thunderstruck.plank_app"
+  "shareRecordMessage": "プランクを {seconds}秒キープできた！💪\n\nPlank Now — シンプル一択のプランクタイマー：\nhttps://play.google.com/store/apps/details?id=com.thunderstruck.plank_app",
+  "soundLabel": "サウンド",
+  "soundDescription": "マスターミュート。OFFですべての音を消音",
+  "tickLabel": "プランク中の拍子音",
+  "tickDescription": "間を埋める軽い毎秒の拍"
 }

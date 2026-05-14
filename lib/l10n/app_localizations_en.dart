@@ -104,4 +104,17 @@ class AppLocalizationsEn extends AppLocalizations {
   String shareRecordMessage(int seconds) {
     return 'I held a plank for $seconds seconds! 💪\n\nPlank Now — the no-frills plank timer:\nhttps://play.google.com/store/apps/details?id=com.thunderstruck.plank_app';
   }
+
+  @override
+  String get soundLabel => 'Sound';
+
+  @override
+  String get soundDescription =>
+      'Master mute. When off, all sounds are silenced.';
+
+  @override
+  String get tickLabel => 'Tick during plank';
+
+  @override
+  String get tickDescription => 'Soft per-second beat to fill the silence';
 }

@@ -29,5 +29,9 @@
   "vibrationLabel": "震動",
   "vibrationDescription": "隨倒數震動",
   "streakDays": "連續 {count} 天",
-  "shareRecordMessage": "我撐了 {seconds} 秒棒式！💪\n\nPlank Now — 極簡棒式計時器：\nhttps://play.google.com/store/apps/details?id=com.thunderstruck.plank_app"
+  "shareRecordMessage": "我撐了 {seconds} 秒棒式！💪\n\nPlank Now — 極簡棒式計時器：\nhttps://play.google.com/store/apps/details?id=com.thunderstruck.plank_app",
+  "soundLabel": "聲音",
+  "soundDescription": "總開關靜音。關閉後所有聲音都將靜音",
+  "tickLabel": "棒式中的節拍音",
+  "tickDescription": "填補靜默的輕柔每秒節拍"
 }

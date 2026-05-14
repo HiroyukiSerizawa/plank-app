@@ -137,5 +137,21 @@
         "example": "60"
       }
     }
+  },
+  "soundLabel": "Sound",
+  "@soundLabel": {
+    "description": "Settings toggle label for the master sound mute"
+  },
+  "soundDescription": "Master mute. When off, all sounds are silenced.",
+  "@soundDescription": {
+    "description": "Settings toggle description for the master sound mute"
+  },
+  "tickLabel": "Tick during plank",
+  "@tickLabel": {
+    "description": "Settings toggle label for the per-second tick during the plank"
+  },
+  "tickDescription": "Soft per-second beat to fill the silence",
+  "@tickDescription": {
+    "description": "Settings toggle description for the per-second tick"
   }
 }

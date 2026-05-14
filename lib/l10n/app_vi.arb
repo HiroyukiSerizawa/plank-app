@@ -29,5 +29,9 @@
   "vibrationLabel": "Rung",
   "vibrationDescription": "Rung theo mỗi nhịp đếm",
   "streakDays": "Chuỗi {count} ngày",
-  "shareRecordMessage": "Tôi đã giữ plank {seconds} giây! 💪\n\nPlank Now — đồng hồ plank đơn giản:\nhttps://play.google.com/store/apps/details?id=com.thunderstruck.plank_app"
+  "shareRecordMessage": "Tôi đã giữ plank {seconds} giây! 💪\n\nPlank Now — đồng hồ plank đơn giản:\nhttps://play.google.com/store/apps/details?id=com.thunderstruck.plank_app",
+  "soundLabel": "Âm thanh",
+  "soundDescription": "Tắt tổng. Khi tắt, mọi âm thanh đều im lặng.",
+  "tickLabel": "Tích tắc khi plank",
+  "tickDescription": "Nhịp nhẹ mỗi giây để lấp đầy khoảng lặng"
 }

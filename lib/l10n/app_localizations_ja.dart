@@ -103,4 +103,16 @@ class AppLocalizationsJa extends AppLocalizations {
   String shareRecordMessage(int seconds) {
     return 'プランクを $seconds秒キープできた！💪\n\nPlank Now — シンプル一択のプランクタイマー：\nhttps://play.google.com/store/apps/details?id=com.thunderstruck.plank_app';
   }
+
+  @override
+  String get soundLabel => 'サウンド';
+
+  @override
+  String get soundDescription => 'マスターミュート。OFFですべての音を消音';
+
+  @override
+  String get tickLabel => 'プランク中の拍子音';
+
+  @override
+  String get tickDescription => '間を埋める軽い毎秒の拍';
 }

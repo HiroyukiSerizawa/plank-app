@@ -29,5 +29,9 @@
   "vibrationLabel": "Vibration",
   "vibrationDescription": "Vibre à chaque temps",
   "streakDays": "Série de {count} jours",
-  "shareRecordMessage": "J'ai tenu la planche pendant {seconds} secondes ! 💪\n\nPlank Now — le minuteur de planche sans fioritures :\nhttps://play.google.com/store/apps/details?id=com.thunderstruck.plank_app"
+  "shareRecordMessage": "J'ai tenu la planche pendant {seconds} secondes ! 💪\n\nPlank Now — le minuteur de planche sans fioritures :\nhttps://play.google.com/store/apps/details?id=com.thunderstruck.plank_app",
+  "soundLabel": "Son",
+  "soundDescription": "Coupure générale. Désactivé : tous les sons coupés.",
+  "tickLabel": "Tic pendant la planche",
+  "tickDescription": "Battement doux par seconde pour combler le silence"
 }

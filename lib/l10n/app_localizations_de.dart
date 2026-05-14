@@ -103,4 +103,17 @@ class AppLocalizationsDe extends AppLocalizations {
   String shareRecordMessage(int seconds) {
     return 'Habe die Plank $seconds Sekunden gehalten! 💪\n\nPlank Now — der schnörkellose Plank-Timer:\nhttps://play.google.com/store/apps/details?id=com.thunderstruck.plank_app';
   }
+
+  @override
+  String get soundLabel => 'Ton';
+
+  @override
+  String get soundDescription =>
+      'Master-Stummschaltung. Aus = alle Töne stumm.';
+
+  @override
+  String get tickLabel => 'Tick während Plank';
+
+  @override
+  String get tickDescription => 'Sanfter Sekundentakt zur Füllung der Stille';
 }

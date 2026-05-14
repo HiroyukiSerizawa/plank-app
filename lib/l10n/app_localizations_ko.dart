@@ -103,4 +103,16 @@ class AppLocalizationsKo extends AppLocalizations {
   String shareRecordMessage(int seconds) {
     return '플랭크 $seconds초 유지 성공! 💪\n\nPlank Now — 군더더기 없는 플랭크 타이머:\nhttps://play.google.com/store/apps/details?id=com.thunderstruck.plank_app';
   }
+
+  @override
+  String get soundLabel => '사운드';
+
+  @override
+  String get soundDescription => '마스터 음소거. 끄면 모든 소리가 무음 처리됩니다.';
+
+  @override
+  String get tickLabel => '플랭크 중 비트음';
+
+  @override
+  String get tickDescription => '정적을 채우는 부드러운 1초 비트';
 }

@@ -104,4 +104,16 @@ class AppLocalizationsVi extends AppLocalizations {
   String shareRecordMessage(int seconds) {
     return 'Tôi đã giữ plank $seconds giây! 💪\n\nPlank Now — đồng hồ plank đơn giản:\nhttps://play.google.com/store/apps/details?id=com.thunderstruck.plank_app';
   }
+
+  @override
+  String get soundLabel => 'Âm thanh';
+
+  @override
+  String get soundDescription => 'Tắt tổng. Khi tắt, mọi âm thanh đều im lặng.';
+
+  @override
+  String get tickLabel => 'Tích tắc khi plank';
+
+  @override
+  String get tickDescription => 'Nhịp nhẹ mỗi giây để lấp đầy khoảng lặng';
 }

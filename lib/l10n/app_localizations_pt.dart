@@ -103,6 +103,20 @@ class AppLocalizationsPt extends AppLocalizations {
   String shareRecordMessage(int seconds) {
     return 'Aguentei a prancha durante $seconds segundos! 💪\n\nPlank Now — temporizador de prancha sem firulas:\nhttps://play.google.com/store/apps/details?id=com.thunderstruck.plank_app';
   }
+
+  @override
+  String get soundLabel => 'Som';
+
+  @override
+  String get soundDescription =>
+      'Silenciar geral. Quando desligado, todos os sons silenciados.';
+
+  @override
+  String get tickLabel => 'Tique durante a prancha';
+
+  @override
+  String get tickDescription =>
+      'Batida suave por segundo para preencher o silêncio';
 }
 
 /// The translations for Portuguese, as used in Brazil (`pt_BR`).
@@ -204,4 +218,18 @@ class AppLocalizationsPtBr extends AppLocalizationsPt {
   String shareRecordMessage(int seconds) {
     return 'Aguentei a prancha por $seconds segundos! 💪\n\nPlank Now — o cronômetro de prancha direto ao ponto:\nhttps://play.google.com/store/apps/details?id=com.thunderstruck.plank_app';
   }
+
+  @override
+  String get soundLabel => 'Som';
+
+  @override
+  String get soundDescription =>
+      'Mudo geral. Quando desligado, todos os sons silenciados.';
+
+  @override
+  String get tickLabel => 'Tique durante a prancha';
+
+  @override
+  String get tickDescription =>
+      'Batida suave por segundo para preencher o silêncio';
 }

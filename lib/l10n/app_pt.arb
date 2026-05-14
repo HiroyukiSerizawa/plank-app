@@ -29,5 +29,9 @@
   "vibrationLabel": "Vibração",
   "vibrationDescription": "Pulsa a cada contagem",
   "streakDays": "Sequência de {count} dias",
-  "shareRecordMessage": "Aguentei a prancha durante {seconds} segundos! 💪\n\nPlank Now — temporizador de prancha sem firulas:\nhttps://play.google.com/store/apps/details?id=com.thunderstruck.plank_app"
+  "shareRecordMessage": "Aguentei a prancha durante {seconds} segundos! 💪\n\nPlank Now — temporizador de prancha sem firulas:\nhttps://play.google.com/store/apps/details?id=com.thunderstruck.plank_app",
+  "soundLabel": "Som",
+  "soundDescription": "Silenciar geral. Quando desligado, todos os sons silenciados.",
+  "tickLabel": "Tique durante a prancha",
+  "tickDescription": "Batida suave por segundo para preencher o silêncio"
 }

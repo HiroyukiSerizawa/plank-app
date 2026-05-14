@@ -103,4 +103,18 @@ class AppLocalizationsId extends AppLocalizations {
   String shareRecordMessage(int seconds) {
     return 'Berhasil plank selama $seconds detik! 💪\n\nPlank Now — timer plank tanpa ribet:\nhttps://play.google.com/store/apps/details?id=com.thunderstruck.plank_app';
   }
+
+  @override
+  String get soundLabel => 'Suara';
+
+  @override
+  String get soundDescription =>
+      'Bisukan master. Saat mati, semua suara dibisukan.';
+
+  @override
+  String get tickLabel => 'Tik selama plank';
+
+  @override
+  String get tickDescription =>
+      'Ketukan lembut per detik untuk mengisi keheningan';
 }

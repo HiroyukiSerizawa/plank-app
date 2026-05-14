@@ -104,4 +104,16 @@ class AppLocalizationsHi extends AppLocalizations {
   String shareRecordMessage(int seconds) {
     return 'मैंने $seconds सेकंड तक प्लैंक की! 💪\n\nPlank Now — सरल प्लैंक टाइमर:\nhttps://play.google.com/store/apps/details?id=com.thunderstruck.plank_app';
   }
+
+  @override
+  String get soundLabel => 'ध्वनि';
+
+  @override
+  String get soundDescription => 'मास्टर म्यूट। बंद करने पर सभी ध्वनियाँ शांत।';
+
+  @override
+  String get tickLabel => 'प्लैंक के दौरान टिक';
+
+  @override
+  String get tickDescription => 'मौन भरने के लिए हर सेकंड की हल्की धड़कन';
 }

@@ -136,12 +136,19 @@ class _TimerScreenState extends State<TimerScreen>
     _timer = Timer.periodic(const Duration(seconds: 1), (_) {
       final next = _elapsed + 1;
       setState(() => _elapsed = next);
-      // End-of-session countdown: 5 → 1 (only when the target is long enough
-      // to fit it; sub-5s sessions skip the countdown — spec test #18).
       final remaining = _targetSeconds - next;
       if (_targetSeconds >= 5 && remaining >= 1 && remaining <= 5) {
+        // End-of-session countdown: 5 → 1 (only when the target is long enough
+        // to fit it; sub-5s sessions skip the countdown — spec test #18).
+        // The countdown voice takes precedence over the tick so the two
+        // cues don't collide.
         SoundService.instance.play('$remaining.mp3');
         HapticService.instance.tick();
+      } else if (remaining >= 1) {
+        // Body of the plank: a soft per-second tick to fill the silence
+        // between the GO! and the final countdown. Skipped on the last beat
+        // (remaining == 0) — that slot belongs to done.mp3 in _finish().
+        SoundService.instance.playTick();
       }
       if (next >= _targetSeconds) _finish();
     });

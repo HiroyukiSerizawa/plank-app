@@ -29,5 +29,9 @@
   "vibrationLabel": "कंपन",
   "vibrationDescription": "हर काउंटडाउन पर कंपन",
   "streakDays": "{count} दिन की लय",
-  "shareRecordMessage": "मैंने {seconds} सेकंड तक प्लैंक की! 💪\n\nPlank Now — सरल प्लैंक टाइमर:\nhttps://play.google.com/store/apps/details?id=com.thunderstruck.plank_app"
+  "shareRecordMessage": "मैंने {seconds} सेकंड तक प्लैंक की! 💪\n\nPlank Now — सरल प्लैंक टाइमर:\nhttps://play.google.com/store/apps/details?id=com.thunderstruck.plank_app",
+  "soundLabel": "ध्वनि",
+  "soundDescription": "मास्टर म्यूट। बंद करने पर सभी ध्वनियाँ शांत।",
+  "tickLabel": "प्लैंक के दौरान टिक",
+  "tickDescription": "मौन भरने के लिए हर सेकंड की हल्की धड़कन"
 }

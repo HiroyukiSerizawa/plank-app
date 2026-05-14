@@ -104,4 +104,18 @@ class AppLocalizationsFr extends AppLocalizations {
   String shareRecordMessage(int seconds) {
     return 'J\'ai tenu la planche pendant $seconds secondes ! 💪\n\nPlank Now — le minuteur de planche sans fioritures :\nhttps://play.google.com/store/apps/details?id=com.thunderstruck.plank_app';
   }
+
+  @override
+  String get soundLabel => 'Son';
+
+  @override
+  String get soundDescription =>
+      'Coupure générale. Désactivé : tous les sons coupés.';
+
+  @override
+  String get tickLabel => 'Tic pendant la planche';
+
+  @override
+  String get tickDescription =>
+      'Battement doux par seconde pour combler le silence';
 }

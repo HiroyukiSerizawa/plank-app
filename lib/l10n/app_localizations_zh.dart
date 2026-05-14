@@ -103,6 +103,18 @@ class AppLocalizationsZh extends AppLocalizations {
   String shareRecordMessage(int seconds) {
     return '我撐了 $seconds 秒棒式！💪\n\nPlank Now — 極簡棒式計時器：\nhttps://play.google.com/store/apps/details?id=com.thunderstruck.plank_app';
   }
+
+  @override
+  String get soundLabel => '声音';
+
+  @override
+  String get soundDescription => '总开关静音。关闭后所有声音都将静音';
+
+  @override
+  String get tickLabel => '平板支撑中的节拍音';
+
+  @override
+  String get tickDescription => '填补静默的轻柔每秒节拍';
 }
 
 /// The translations for Chinese, as used in Taiwan (`zh_TW`).
@@ -204,4 +216,16 @@ class AppLocalizationsZhTw extends AppLocalizationsZh {
   String shareRecordMessage(int seconds) {
     return '我撐了 $seconds 秒棒式！💪\n\nPlank Now — 極簡棒式計時器：\nhttps://play.google.com/store/apps/details?id=com.thunderstruck.plank_app';
   }
+
+  @override
+  String get soundLabel => '聲音';
+
+  @override
+  String get soundDescription => '總開關靜音。關閉後所有聲音都將靜音';
+
+  @override
+  String get tickLabel => '棒式中的節拍音';
+
+  @override
+  String get tickDescription => '填補靜默的輕柔每秒節拍';
 }

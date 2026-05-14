@@ -104,4 +104,18 @@ class AppLocalizationsEs extends AppLocalizations {
   String shareRecordMessage(int seconds) {
     return '¡Aguanté la plancha $seconds segundos! 💪\n\nPlank Now — el temporizador de plancha sin adornos:\nhttps://play.google.com/store/apps/details?id=com.thunderstruck.plank_app';
   }
+
+  @override
+  String get soundLabel => 'Sonido';
+
+  @override
+  String get soundDescription =>
+      'Silencio general. Apagado: todos los sonidos en silencio.';
+
+  @override
+  String get tickLabel => 'Tic durante la plancha';
+
+  @override
+  String get tickDescription =>
+      'Latido suave por segundo para llenar el silencio';
 }

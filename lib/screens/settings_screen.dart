@@ -11,19 +11,37 @@ class SettingsScreen extends StatefulWidget {
 }
 
 class _SettingsScreenState extends State<SettingsScreen> {
-  late bool _soundEnabled;
+  late bool _master;
+  late bool _voice;
+  late bool _tick;
   late bool _vibrationEnabled;
 
   @override
   void initState() {
     super.initState();
-    _soundEnabled = SoundService.instance.enabled;
+    _master = SoundService.instance.masterEnabled;
+    _voice = SoundService.instance.voiceEnabled;
+    _tick = SoundService.instance.tickEnabled;
     _vibrationEnabled = HapticService.instance.enabled;
   }
 
-  Future<void> _toggleSound(bool value) async {
-    setState(() => _soundEnabled = value);
-    await SoundService.instance.setEnabled(value);
+  Future<void> _toggleMaster(bool value) async {
+    setState(() => _master = value);
+    await SoundService.instance.setMasterEnabled(value);
+  }
+
+  Future<void> _toggleVoice(bool value) async {
+    setState(() => _voice = value);
+    await SoundService.instance.setVoiceEnabled(value);
+  }
+
+  Future<void> _toggleTick(bool value) async {
+    setState(() => _tick = value);
+    await SoundService.instance.setTickEnabled(value);
+    if (value && _master) {
+      // Confirmation tick so the user can hear what they just enabled.
+      SoundService.instance.playTick();
+    }
   }
 
   Future<void> _toggleVibration(bool value) async {
@@ -82,10 +100,26 @@ class _SettingsScreenState extends State<SettingsScreen> {
             padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 24),
             children: [
               _SettingsToggleCard(
+                label: l10n.soundLabel,
+                description: l10n.soundDescription,
+                value: _master,
+                onChanged: _toggleMaster,
+              ),
+              const SizedBox(height: 12),
+              _SettingsToggleCard(
                 label: l10n.countdownVoiceLabel,
                 description: l10n.countdownVoiceDescription,
-                value: _soundEnabled,
-                onChanged: _toggleSound,
+                value: _voice,
+                onChanged: _toggleVoice,
+                enabled: _master,
+              ),
+              const SizedBox(height: 12),
+              _SettingsToggleCard(
+                label: l10n.tickLabel,
+                description: l10n.tickDescription,
+                value: _tick,
+                onChanged: _toggleTick,
+                enabled: _master,
               ),
               const SizedBox(height: 12),
               _SettingsToggleCard(
@@ -129,65 +163,72 @@ class _SettingsToggleCard extends StatelessWidget {
   final String description;
   final bool value;
   final ValueChanged<bool> onChanged;
+  // Greys the card and disables the Switch. Used by child toggles that depend
+  // on a master toggle being on.
+  final bool enabled;
 
   const _SettingsToggleCard({
     required this.label,
     required this.description,
     required this.value,
     required this.onChanged,
+    this.enabled = true,
   });
 
   @override
   Widget build(BuildContext context) {
     const neon = Color(0xFF00D4FF);
     const accent = Color(0xFFFFB347);
-    return Container(
-      padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 14),
-      decoration: BoxDecoration(
-        color: const Color(0xFF0A1628).withValues(alpha: 0.6),
-        border: Border.all(color: neon.withValues(alpha: 0.4), width: 1),
-        borderRadius: BorderRadius.circular(10),
-        boxShadow: [
-          BoxShadow(color: neon.withValues(alpha: 0.12), blurRadius: 12),
-        ],
-      ),
-      child: Row(
-        children: [
-          Expanded(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  label,
-                  style: const TextStyle(
-                    fontSize: 14,
-                    fontWeight: FontWeight.w700,
-                    color: Colors.white,
-                    letterSpacing: 2,
+    return Opacity(
+      opacity: enabled ? 1.0 : 0.45,
+      child: Container(
+        padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 14),
+        decoration: BoxDecoration(
+          color: const Color(0xFF0A1628).withValues(alpha: 0.6),
+          border: Border.all(color: neon.withValues(alpha: 0.4), width: 1),
+          borderRadius: BorderRadius.circular(10),
+          boxShadow: [
+            BoxShadow(color: neon.withValues(alpha: 0.12), blurRadius: 12),
+          ],
+        ),
+        child: Row(
+          children: [
+            Expanded(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    label,
+                    style: const TextStyle(
+                      fontSize: 14,
+                      fontWeight: FontWeight.w700,
+                      color: Colors.white,
+                      letterSpacing: 2,
+                    ),
                   ),
-                ),
-                const SizedBox(height: 4),
-                Text(
-                  description,
-                  style: TextStyle(
-                    fontSize: 11,
-                    color: Colors.white.withValues(alpha: 0.6),
-                    letterSpacing: 0.5,
+                  const SizedBox(height: 4),
+                  Text(
+                    description,
+                    style: TextStyle(
+                      fontSize: 11,
+                      color: Colors.white.withValues(alpha: 0.6),
+                      letterSpacing: 0.5,
+                    ),
                   ),
-                ),
-              ],
+                ],
+              ),
             ),
-          ),
-          const SizedBox(width: 16),
-          Switch(
-            value: value,
-            onChanged: onChanged,
-            activeThumbColor: accent,
-            activeTrackColor: accent.withValues(alpha: 0.4),
-            inactiveThumbColor: Colors.white.withValues(alpha: 0.4),
-            inactiveTrackColor: Colors.white.withValues(alpha: 0.1),
-          ),
-        ],
+            const SizedBox(width: 16),
+            Switch(
+              value: value,
+              onChanged: enabled ? onChanged : null,
+              activeThumbColor: accent,
+              activeTrackColor: accent.withValues(alpha: 0.4),
+              inactiveThumbColor: Colors.white.withValues(alpha: 0.4),
+              inactiveTrackColor: Colors.white.withValues(alpha: 0.1),
+            ),
+          ],
+        ),
       ),
     );
   }
