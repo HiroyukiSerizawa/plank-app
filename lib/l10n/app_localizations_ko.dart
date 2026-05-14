@@ -106,4 +106,19 @@ class AppLocalizationsKo extends AppLocalizations {
 
   @override
   String get soundDescription => '마스터 음소거. 끄면 모든 소리가 무음 처리됩니다.';
+
+  @override
+  String get viewHistory => '기록 보기';
+
+  @override
+  String get confirmCancel => '취소하시겠습니까?';
+
+  @override
+  String get confirmGiveUp => '포기하시겠습니까?';
+
+  @override
+  String get yes => '예';
+
+  @override
+  String get no => '아니요';
 }

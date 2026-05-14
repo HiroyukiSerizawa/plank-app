@@ -30,5 +30,10 @@
   "streakDays": "Chuỗi {count} ngày",
   "shareRecordMessage": "Tôi đã giữ plank {seconds} giây! 💪\n\nPlank Now — đồng hồ plank đơn giản:\nhttps://play.google.com/store/apps/details?id=com.thunderstruck.plank_app",
   "soundLabel": "Âm thanh",
-  "soundDescription": "Tắt tổng. Khi tắt, mọi âm thanh đều im lặng."
+  "soundDescription": "Tắt tổng. Khi tắt, mọi âm thanh đều im lặng.",
+  "viewHistory": "XEM LỊCH SỬ",
+  "confirmCancel": "Huỷ?",
+  "confirmGiveUp": "Bỏ cuộc?",
+  "yes": "CÓ",
+  "no": "KHÔNG"
 }

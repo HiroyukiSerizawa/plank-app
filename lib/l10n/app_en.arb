@@ -141,5 +141,25 @@
   "soundDescription": "Master mute. When off, all sounds are silenced.",
   "@soundDescription": {
     "description": "Settings toggle description for the master sound mute"
+  },
+  "viewHistory": "VIEW HISTORY",
+  "@viewHistory": {
+    "description": "Button on the completion screen that navigates to the history list"
+  },
+  "confirmCancel": "Cancel?",
+  "@confirmCancel": {
+    "description": "Confirmation dialog title shown when the user taps CANCEL during a running plank"
+  },
+  "confirmGiveUp": "Give up?",
+  "@confirmGiveUp": {
+    "description": "Confirmation dialog title shown when the user taps GIVE UP during a running plank"
+  },
+  "yes": "YES",
+  "@yes": {
+    "description": "Affirmative action in confirmation dialogs"
+  },
+  "no": "NO",
+  "@no": {
+    "description": "Negative action in confirmation dialogs"
   }
 }

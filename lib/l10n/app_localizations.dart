@@ -303,6 +303,36 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Master mute. When off, all sounds are silenced.'**
   String get soundDescription;
+
+  /// Button on the completion screen that navigates to the history list
+  ///
+  /// In en, this message translates to:
+  /// **'VIEW HISTORY'**
+  String get viewHistory;
+
+  /// Confirmation dialog title shown when the user taps CANCEL during a running plank
+  ///
+  /// In en, this message translates to:
+  /// **'Cancel?'**
+  String get confirmCancel;
+
+  /// Confirmation dialog title shown when the user taps GIVE UP during a running plank
+  ///
+  /// In en, this message translates to:
+  /// **'Give up?'**
+  String get confirmGiveUp;
+
+  /// Affirmative action in confirmation dialogs
+  ///
+  /// In en, this message translates to:
+  /// **'YES'**
+  String get yes;
+
+  /// Negative action in confirmation dialogs
+  ///
+  /// In en, this message translates to:
+  /// **'NO'**
+  String get no;
 }
 
 class _AppLocalizationsDelegate

@@ -106,4 +106,19 @@ class AppLocalizationsJa extends AppLocalizations {
 
   @override
   String get soundDescription => 'マスターミュート。OFFですべての音を消音';
+
+  @override
+  String get viewHistory => '履歴を見る';
+
+  @override
+  String get confirmCancel => 'キャンセルしますか？';
+
+  @override
+  String get confirmGiveUp => 'ギブアップしますか？';
+
+  @override
+  String get yes => 'はい';
+
+  @override
+  String get no => 'いいえ';
 }

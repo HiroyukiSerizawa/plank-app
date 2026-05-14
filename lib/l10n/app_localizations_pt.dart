@@ -107,6 +107,21 @@ class AppLocalizationsPt extends AppLocalizations {
   @override
   String get soundDescription =>
       'Silenciar geral. Quando desligado, todos os sons silenciados.';
+
+  @override
+  String get viewHistory => 'VER HISTÓRICO';
+
+  @override
+  String get confirmCancel => 'Cancelar?';
+
+  @override
+  String get confirmGiveUp => 'Desistir?';
+
+  @override
+  String get yes => 'SIM';
+
+  @override
+  String get no => 'NÃO';
 }
 
 /// The translations for Portuguese, as used in Brazil (`pt_BR`).
@@ -212,4 +227,19 @@ class AppLocalizationsPtBr extends AppLocalizationsPt {
   @override
   String get soundDescription =>
       'Mudo geral. Quando desligado, todos os sons silenciados.';
+
+  @override
+  String get viewHistory => 'VER HISTÓRICO';
+
+  @override
+  String get confirmCancel => 'Cancelar?';
+
+  @override
+  String get confirmGiveUp => 'Desistir?';
+
+  @override
+  String get yes => 'SIM';
+
+  @override
+  String get no => 'NÃO';
 }

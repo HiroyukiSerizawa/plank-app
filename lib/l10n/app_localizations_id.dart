@@ -107,4 +107,19 @@ class AppLocalizationsId extends AppLocalizations {
   @override
   String get soundDescription =>
       'Bisukan master. Saat mati, semua suara dibisukan.';
+
+  @override
+  String get viewHistory => 'LIHAT RIWAYAT';
+
+  @override
+  String get confirmCancel => 'Batalkan?';
+
+  @override
+  String get confirmGiveUp => 'Menyerah?';
+
+  @override
+  String get yes => 'YA';
+
+  @override
+  String get no => 'TIDAK';
 }

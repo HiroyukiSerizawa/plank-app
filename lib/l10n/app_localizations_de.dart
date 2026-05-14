@@ -107,4 +107,19 @@ class AppLocalizationsDe extends AppLocalizations {
   @override
   String get soundDescription =>
       'Master-Stummschaltung. Aus = alle Töne stumm.';
+
+  @override
+  String get viewHistory => 'VERLAUF ANSEHEN';
+
+  @override
+  String get confirmCancel => 'Abbrechen?';
+
+  @override
+  String get confirmGiveUp => 'Aufgeben?';
+
+  @override
+  String get yes => 'JA';
+
+  @override
+  String get no => 'NEIN';
 }

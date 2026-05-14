@@ -106,6 +106,21 @@ class AppLocalizationsZh extends AppLocalizations {
 
   @override
   String get soundDescription => '总开关静音。关闭后所有声音都将静音';
+
+  @override
+  String get viewHistory => '查看記錄';
+
+  @override
+  String get confirmCancel => '要取消嗎？';
+
+  @override
+  String get confirmGiveUp => '要放棄嗎？';
+
+  @override
+  String get yes => '是';
+
+  @override
+  String get no => '否';
 }
 
 /// The translations for Chinese, as used in Taiwan (`zh_TW`).
@@ -210,4 +225,19 @@ class AppLocalizationsZhTw extends AppLocalizationsZh {
 
   @override
   String get soundDescription => '總開關靜音。關閉後所有聲音都將靜音';
+
+  @override
+  String get viewHistory => '查看記錄';
+
+  @override
+  String get confirmCancel => '要取消嗎？';
+
+  @override
+  String get confirmGiveUp => '要放棄嗎？';
+
+  @override
+  String get yes => '是';
+
+  @override
+  String get no => '否';
 }

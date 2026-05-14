@@ -30,5 +30,10 @@
   "streakDays": "{count}일 연속",
   "shareRecordMessage": "플랭크 {seconds}초 유지 성공! 💪\n\nPlank Now — 군더더기 없는 플랭크 타이머:\nhttps://play.google.com/store/apps/details?id=com.thunderstruck.plank_app",
   "soundLabel": "사운드",
-  "soundDescription": "마스터 음소거. 끄면 모든 소리가 무음 처리됩니다."
+  "soundDescription": "마스터 음소거. 끄면 모든 소리가 무음 처리됩니다.",
+  "viewHistory": "기록 보기",
+  "confirmCancel": "취소하시겠습니까?",
+  "confirmGiveUp": "포기하시겠습니까?",
+  "yes": "예",
+  "no": "아니요"
 }

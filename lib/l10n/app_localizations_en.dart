@@ -108,4 +108,19 @@ class AppLocalizationsEn extends AppLocalizations {
   @override
   String get soundDescription =>
       'Master mute. When off, all sounds are silenced.';
+
+  @override
+  String get viewHistory => 'VIEW HISTORY';
+
+  @override
+  String get confirmCancel => 'Cancel?';
+
+  @override
+  String get confirmGiveUp => 'Give up?';
+
+  @override
+  String get yes => 'YES';
+
+  @override
+  String get no => 'NO';
 }

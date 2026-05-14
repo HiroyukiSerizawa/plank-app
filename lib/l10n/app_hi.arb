@@ -30,5 +30,10 @@
   "streakDays": "{count} दिन की लय",
   "shareRecordMessage": "मैंने {seconds} सेकंड तक प्लैंक की! 💪\n\nPlank Now — सरल प्लैंक टाइमर:\nhttps://play.google.com/store/apps/details?id=com.thunderstruck.plank_app",
   "soundLabel": "ध्वनि",
-  "soundDescription": "मास्टर म्यूट। बंद करने पर सभी ध्वनियाँ शांत।"
+  "soundDescription": "मास्टर म्यूट। बंद करने पर सभी ध्वनियाँ शांत।",
+  "viewHistory": "इतिहास देखें",
+  "confirmCancel": "रद्द करें?",
+  "confirmGiveUp": "हार मानें?",
+  "yes": "हाँ",
+  "no": "नहीं"
 }

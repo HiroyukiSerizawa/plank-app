@@ -107,4 +107,19 @@ class AppLocalizationsHi extends AppLocalizations {
 
   @override
   String get soundDescription => 'मास्टर म्यूट। बंद करने पर सभी ध्वनियाँ शांत।';
+
+  @override
+  String get viewHistory => 'इतिहास देखें';
+
+  @override
+  String get confirmCancel => 'रद्द करें?';
+
+  @override
+  String get confirmGiveUp => 'हार मानें?';
+
+  @override
+  String get yes => 'हाँ';
+
+  @override
+  String get no => 'नहीं';
 }

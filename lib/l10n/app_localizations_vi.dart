@@ -107,4 +107,19 @@ class AppLocalizationsVi extends AppLocalizations {
 
   @override
   String get soundDescription => 'Tắt tổng. Khi tắt, mọi âm thanh đều im lặng.';
+
+  @override
+  String get viewHistory => 'XEM LỊCH SỬ';
+
+  @override
+  String get confirmCancel => 'Huỷ?';
+
+  @override
+  String get confirmGiveUp => 'Bỏ cuộc?';
+
+  @override
+  String get yes => 'CÓ';
+
+  @override
+  String get no => 'KHÔNG';
 }

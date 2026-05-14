@@ -108,4 +108,19 @@ class AppLocalizationsEs extends AppLocalizations {
   @override
   String get soundDescription =>
       'Silencio general. Apagado: todos los sonidos en silencio.';
+
+  @override
+  String get viewHistory => 'VER HISTORIAL';
+
+  @override
+  String get confirmCancel => '¿Cancelar?';
+
+  @override
+  String get confirmGiveUp => '¿Rendirse?';
+
+  @override
+  String get yes => 'SÍ';
+
+  @override
+  String get no => 'NO';
 }

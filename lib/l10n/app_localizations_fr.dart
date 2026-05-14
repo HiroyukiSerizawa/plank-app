@@ -108,4 +108,19 @@ class AppLocalizationsFr extends AppLocalizations {
   @override
   String get soundDescription =>
       'Coupure générale. Désactivé : tous les sons coupés.';
+
+  @override
+  String get viewHistory => 'VOIR L\'HISTORIQUE';
+
+  @override
+  String get confirmCancel => 'Annuler ?';
+
+  @override
+  String get confirmGiveUp => 'Abandonner ?';
+
+  @override
+  String get yes => 'OUI';
+
+  @override
+  String get no => 'NON';
 }

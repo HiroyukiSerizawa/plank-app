@@ -188,6 +188,35 @@ class _TimerScreenState extends State<TimerScreen>
     await _loadStreak();
   }
 
+  Future<bool> _confirm(String message) async {
+    final l10n = AppLocalizations.of(context);
+    final result = await showDialog<bool>(
+      context: context,
+      builder: (dialogContext) => AlertDialog(
+        backgroundColor: const Color(0xFF0A1628),
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(16),
+          side: const BorderSide(color: Color(0xFF00D4FF), width: 1),
+        ),
+        title: Text(message,
+            style: const TextStyle(color: Color(0xFF00D4FF))),
+        actions: [
+          TextButton(
+            onPressed: () => Navigator.pop(dialogContext, false),
+            child: Text(l10n.no,
+                style: const TextStyle(color: Colors.white54)),
+          ),
+          TextButton(
+            onPressed: () => Navigator.pop(dialogContext, true),
+            child: Text(l10n.yes,
+                style: const TextStyle(color: Color(0xFFFF4466))),
+          ),
+        ],
+      ),
+    );
+    return result ?? false;
+  }
+
   void _setCustom() async {
     final controller = TextEditingController();
     final l10n = AppLocalizations.of(context);
@@ -439,21 +468,50 @@ class _TimerScreenState extends State<TimerScreen>
                       _MainButton(
                         label: l10n.abort,
                         color: const Color(0xFFFF4466),
-                        onTap: _abort,
+                        onTap: () async {
+                          if (await _confirm(l10n.confirmCancel) && mounted) {
+                            _abort();
+                          }
+                        },
                       ),
                       const SizedBox(width: 16),
                       _MainButton(
                         label: l10n.giveUp,
                         color: const Color(0xFFFFB347),
-                        onTap: _giveUp,
+                        onTap: () async {
+                          if (await _confirm(l10n.confirmGiveUp) && mounted) {
+                            await _giveUp();
+                          }
+                        },
+                      ),
+                    ],
+                  )
+                else if (_done)
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      _MainButton(
+                        label: l10n.retry,
+                        color: const Color(0xFF00D4FF),
+                        onTap: () => setState(() => _done = false),
+                      ),
+                      const SizedBox(width: 16),
+                      _MainButton(
+                        label: l10n.viewHistory,
+                        color: const Color(0xFFFFB347),
+                        onTap: () => Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (_) => const HistoryScreen()),
+                        ),
                       ),
                     ],
                   )
                 else
                   _MainButton(
-                    label: _done ? l10n.retry : l10n.start,
+                    label: l10n.start,
                     color: const Color(0xFF00D4FF),
-                    onTap: _done ? () => setState(() => _done = false) : _start,
+                    onTap: _start,
                   ),
               ],
             ),
@@ -823,16 +881,22 @@ class _MainButton extends StatelessWidget {
           ],
         ),
         child: Center(
-          child: Text(
-            label,
-            style: TextStyle(
-              fontSize: 14,
-              fontWeight: FontWeight.w700,
-              letterSpacing: 4,
-              color: color,
-              shadows: [
-                Shadow(color: color.withValues(alpha: 0.9), blurRadius: 8),
-              ],
+          child: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 10),
+            child: FittedBox(
+              fit: BoxFit.scaleDown,
+              child: Text(
+                label,
+                style: TextStyle(
+                  fontSize: 14,
+                  fontWeight: FontWeight.w700,
+                  letterSpacing: 4,
+                  color: color,
+                  shadows: [
+                    Shadow(color: color.withValues(alpha: 0.9), blurRadius: 8),
+                  ],
+                ),
+              ),
             ),
           ),
         ),

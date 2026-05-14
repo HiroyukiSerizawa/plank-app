@@ -30,5 +30,10 @@
   "streakDays": "Série de {count} jours",
   "shareRecordMessage": "J'ai tenu la planche pendant {seconds} secondes ! 💪\n\nPlank Now — le minuteur de planche sans fioritures :\nhttps://play.google.com/store/apps/details?id=com.thunderstruck.plank_app",
   "soundLabel": "Son",
-  "soundDescription": "Coupure générale. Désactivé : tous les sons coupés."
+  "soundDescription": "Coupure générale. Désactivé : tous les sons coupés.",
+  "viewHistory": "VOIR L'HISTORIQUE",
+  "confirmCancel": "Annuler ?",
+  "confirmGiveUp": "Abandonner ?",
+  "yes": "OUI",
+  "no": "NON"
 }
