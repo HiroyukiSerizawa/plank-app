@@ -41,6 +41,14 @@ class _TimerScreenState extends State<TimerScreen>
   // completed/given-up session.
   int _streak = 0;
 
+  // Sub-tick index inside the running phase. The periodic timer fires every
+  // 200ms so the tick sound is delivered at a perfectly even 5x/sec cadence
+  // (AI-generated 1s loops produced uneven "tick-tick-tick·-tick-tick" the
+  // CEO rejected). Every 5th tick marks a 1-second boundary which bumps
+  // `_elapsed` and gates the end-of-session countdown / finish.
+  int _subTickIdx = 0;
+  static const _subTicksPerSecond = 5;
+
   Timer? _timer;
   late AnimationController _pulseController;
   late Animation<double> _pulseAnim;
@@ -133,30 +141,45 @@ class _TimerScreenState extends State<TimerScreen>
       _running = true;
       _elapsed = 0;
     });
+    _subTickIdx = 0;
     // Beat #1 aligned with the GO! cue (T=0 of the running phase).
-    // Without this the periodic tick below wouldn't fire until T=1, leaving
-    // a one-second silent gap between GO! and the first body tick that the
-    // user perceives as broken rhythm.
     SoundService.instance.playTick();
-    _timer = Timer.periodic(const Duration(seconds: 1), (_) {
+    _timer = Timer.periodic(
+      const Duration(milliseconds: 200),
+      (_) => _onSubTick(),
+    );
+  }
+
+  void _onSubTick() {
+    _subTickIdx++;
+    final atSecondBoundary = _subTickIdx % _subTicksPerSecond == 0;
+
+    if (atSecondBoundary) {
       final next = _elapsed + 1;
       setState(() => _elapsed = next);
       final remaining = _targetSeconds - next;
       if (_targetSeconds >= 5 && remaining >= 1 && remaining <= 5) {
-        // End-of-session countdown: 5 → 1 (only when the target is long enough
-        // to fit it; sub-5s sessions skip the countdown — spec test #18).
-        // The countdown voice takes precedence over the tick so the two
-        // cues don't collide.
+        // End-of-session countdown voice (5→1) takes precedence over the
+        // body tick so the cues don't collide. The countdown also silences
+        // sub-second ticks for the remaining 5 seconds (see else branch).
         SoundService.instance.play('$remaining.mp3');
         HapticService.instance.tick();
       } else if (remaining >= 1) {
-        // Body of the plank: a soft per-second tick to fill the silence
-        // between the GO! and the final countdown. Skipped on the last beat
-        // (remaining == 0) — that slot belongs to done.mp3 in _finish().
         SoundService.instance.playTick();
       }
       if (next >= _targetSeconds) _finish();
-    });
+      return;
+    }
+
+    // Sub-second beat (200/400/600/800ms past the boundary). Skip while
+    // inside the final-5s countdown so the voice cue stays clean.
+    final remaining = _targetSeconds - _elapsed;
+    if (_targetSeconds >= 5 && remaining >= 1 && remaining <= 5) {
+      return;
+    }
+    if (remaining >= 1) {
+      SoundService.instance.playTick();
+    }
   }
 
   void _abort() {
