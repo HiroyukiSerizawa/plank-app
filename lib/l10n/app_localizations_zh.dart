@@ -9,10 +9,7 @@ class AppLocalizationsZh extends AppLocalizations {
   AppLocalizationsZh([String locale = 'zh']) : super(locale);
 
   @override
-  String get slogan => '一起來做棒式';
-
-  @override
-  String get secRemaining => '剩餘秒數';
+  String get slogan => 'LET\'S PLANK NOW';
 
   @override
   String get secondsLabel => '秒';
@@ -116,10 +113,7 @@ class AppLocalizationsZhTw extends AppLocalizationsZh {
   AppLocalizationsZhTw() : super('zh_TW');
 
   @override
-  String get slogan => '一起來做棒式';
-
-  @override
-  String get secRemaining => '剩餘秒數';
+  String get slogan => 'LET\'S PLANK NOW';
 
   @override
   String get secondsLabel => '秒';

@@ -12,9 +12,6 @@ class AppLocalizationsEn extends AppLocalizations {
   String get slogan => 'LET\'S PLANK NOW';
 
   @override
-  String get secRemaining => 'SEC REMAINING';
-
-  @override
   String get secondsLabel => 'SECONDS';
 
   @override

@@ -9,10 +9,7 @@ class AppLocalizationsFr extends AppLocalizations {
   AppLocalizationsFr([String locale = 'fr']) : super(locale);
 
   @override
-  String get slogan => 'FAISONS LA PLANCHE MAINTENANT';
-
-  @override
-  String get secRemaining => 'SEC RESTANTES';
+  String get slogan => 'LET\'S PLANK NOW';
 
   @override
   String get secondsLabel => 'SECONDES';

@@ -9,10 +9,7 @@ class AppLocalizationsId extends AppLocalizations {
   AppLocalizationsId([String locale = 'id']) : super(locale);
 
   @override
-  String get slogan => 'AYO PLANK SEKARANG';
-
-  @override
-  String get secRemaining => 'SISA DETIK';
+  String get slogan => 'LET\'S PLANK NOW';
 
   @override
   String get secondsLabel => 'DETIK';
