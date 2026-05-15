@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:fl_chart/fl_chart.dart';
+import 'package:google_mobile_ads/google_mobile_ads.dart';
 import '../l10n/app_localizations.dart';
 import '../models/record.dart';
+import '../services/ad_service.dart';
 import '../services/database_service.dart';
 
 class StatsScreen extends StatefulWidget {
@@ -17,11 +19,22 @@ class _StatsScreenState extends State<StatsScreen> {
   static const _bg = Color(0xFF030614);
 
   late Future<Map<String, dynamic>> _stats;
+  BannerAd? _banner;
+  bool _bannerReady = false;
 
   @override
   void initState() {
     super.initState();
     _stats = DatabaseService.getStats();
+    _banner = AdService.createBanner(
+      onLoaded: (ad) => setState(() => _bannerReady = true),
+    );
+  }
+
+  @override
+  void dispose() {
+    _banner?.dispose();
+    super.dispose();
   }
 
   @override
@@ -29,6 +42,12 @@ class _StatsScreenState extends State<StatsScreen> {
     final l10n = AppLocalizations.of(context);
     return Scaffold(
       backgroundColor: _bg,
+      bottomNavigationBar: _bannerReady && _banner != null
+          ? SizedBox(
+              height: _banner!.size.height.toDouble(),
+              child: AdWidget(ad: _banner!),
+            )
+          : null,
       appBar: AppBar(
         backgroundColor: Colors.transparent,
         elevation: 0,

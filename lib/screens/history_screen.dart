@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:google_mobile_ads/google_mobile_ads.dart';
 import 'package:share_plus/share_plus.dart';
 import '../l10n/app_localizations.dart';
 import '../models/record.dart';
+import '../services/ad_service.dart';
 import '../services/database_service.dart';
 
 class HistoryScreen extends StatefulWidget {
@@ -13,11 +15,22 @@ class HistoryScreen extends StatefulWidget {
 
 class _HistoryScreenState extends State<HistoryScreen> {
   late Future<List<Record>> _records;
+  BannerAd? _banner;
+  bool _bannerReady = false;
 
   @override
   void initState() {
     super.initState();
     _records = DatabaseService.getAll();
+    _banner = AdService.createBanner(
+      onLoaded: (ad) => setState(() => _bannerReady = true),
+    );
+  }
+
+  @override
+  void dispose() {
+    _banner?.dispose();
+    super.dispose();
   }
 
   String _fmt(DateTime d) =>
@@ -29,6 +42,12 @@ class _HistoryScreenState extends State<HistoryScreen> {
     final l10n = AppLocalizations.of(context);
     return Scaffold(
       backgroundColor: const Color(0xFF030614),
+      bottomNavigationBar: _bannerReady && _banner != null
+          ? SizedBox(
+              height: _banner!.size.height.toDouble(),
+              child: AdWidget(ad: _banner!),
+            )
+          : null,
       appBar: AppBar(
         backgroundColor: Colors.transparent,
         elevation: 0,
