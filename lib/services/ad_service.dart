@@ -17,8 +17,7 @@ class AdService {
 
   // 本番ad-unit-ID（リリースビルドのみ）。
   static const _prodBannerId = 'ca-app-pub-3745259041113437/4390642503';
-  // TODO(CEO): AdMob コンソールで App Open 用 ad unit を発行し、ここに差し替え。
-  static const _prodAppOpenId = 'ca-app-pub-3745259041113437/0000000001';
+  static const _prodAppOpenId = 'ca-app-pub-3745259041113437/4385295696';
 
   static String get _bannerId =>
       kReleaseMode ? _prodBannerId : _testBannerId;
